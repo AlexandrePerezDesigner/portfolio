@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Alexandre Perez</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+<header>
+  <div class="logo">
+    <img src="assets/logo.png" alt="Logo Alexandre Perez">
+  </div>
+  <nav class="desktop-nav">
+    <ul>
+      <li><a href="#portfolio" data-en="Portfolio" data-pt="Portfólio">Portfolio</a></li>
+      <li><a href="#highlights" data-en="Highlights" data-pt="Destaques">Highlights</a></li>
+      <li><a href="#about" data-en="About" data-pt="Sobre">About</a></li>
+      <li><a href="#contact" data-en="Contact" data-pt="Contato">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <nav id="mobile-menu" class="hidden">
+    <ul>
+      <li><a href="#portfolio" data-en="Portfolio" data-pt="Portfólio">Portfolio</a></li>
+      <li><a href="#highlights" data-en="Highlights" data-pt="Destaques">Highlights</a></li>
+      <li><a href="#about" data-en="About" data-pt="Sobre">About</a></li>
+      <li><a href="#contact" data-en="Contact" data-pt="Contato">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="assets/foto.png" alt="Alexandre Perez" class="profile-photo">
+      <div class="intro-text">
+        <h1 data-en="Welcome! I am Alexandre Perez" data-pt="Bem-vindo! Eu sou Alexandre Perez">Welcome!</h1>
+        <p data-en="Art Director with 15 years of experience in campaigns for e-commerce, e-learning, and TV. Advanced proficiency in Photoshop, Illustrator, After Effects, and Figma, with a focus on innovation and impactful results in creative projects."
+           data-pt="Diretor de Arte com 15 anos de experiência em campanhas para e-commerce, e-learning e TV. Experiência avançada em Photoshop, Illustrator, After Effects e Figma, com foco em inovação e resultados impactantes em projetos criativos.">
+          Throughout my 15-year journey as a Designer...
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services Desk-->
+<section class="services">
+  <div class="service">
+    <img src="assets/portfolio.svg" alt="Portfolio Icon">
+    <h3 data-en="Portfolio" data-pt="Portfólio">Portfolio</h3>
+    <p data-en="Explore my design projects and creative solutions."
+       data-pt="Explore meus projetos de design e soluções criativas.">
+       Explore my design projects...
+    </p>
+    <a href="#portfolio" class="btn" data-en="Discover Now" data-pt="Descubra Agora">Discover Now</a>
+  </div>
+  <div class="service">
+    <img src="assets/highlights.svg" alt="Highlights Icon">
+    <h3 data-en="Highlights" data-pt="Destaques">Highlights</h3>
+    <p data-en="Important highlights in national and international media"
+       data-pt="Destaques importantes em mídias nacionais e internacionais">
+       Discover key achievements...
+    </p>
+    <a href="#highlights" class="btn" data-en="Discover Now" data-pt="Descubra Agora">Discover Now</a>
+  </div>
+  <div class="service">
+    <img src="assets/about.svg" alt="About Icon">
+    <h3 data-en="About" data-pt="Sobre">About</h3>
+    <p data-en="Get to know me and my journey as a designer."
+       data-pt="Conheça mais sobre mim e minha trajetória como designer.">
+       Get to know me...
+    </p>
+    <a href="#about" class="btn" data-en="Discover Now" data-pt="Descubra Agora">Discover Now</a>
+  </div>
+  <div class="service">
+    <img src="assets/contact.svg" alt="Contact Icon">
+    <h3 data-en="Contact" data-pt="Contato">Contact</h3>
+    <p data-en="Reach out for inquiries or collaborations."
+       data-pt="Entre em contato para dúvidas ou colaborações.">
+       Reach out for inquiries...
+    </p>
+    <a href="#contact" class="btn" data-en="Discover Now" data-pt="Descubra Agora">Discover Now</a>
+  </div>
+</section>
+
+  <!-- Section Services Mobile-->
+<section class="services-slider">
+  <button class="arrow arrow-left hidden" id="arrow-left">❮</button>
+  <div class="services-slider-container">
+    <div class="service">
+      <img src="assets/portfolio.svg" alt="Portfolio Icon">
+      <h3>Portfolio</h3>
+      <p>Explore my design projects and creative solutions.</p>
+    </div>
+    <div class="service">
+      <img src="assets/highlights.svg" alt="Highlights Icon">
+      <h3>Highlights</h3>
+      <p>Discover key achievements and impactful work.</p>
+    </div>
+    <div class="service">
+      <img src="assets/about.svg" alt="About Icon">
+      <h3>About</h3>
+      <p>Get to know me and my journey as a designer.</p>
+    </div>
+    <div class="service">
+      <img src="assets/contact.svg" alt="Contact Icon">
+      <h3>Contact</h3>
+      <p>Reach out for inquiries or collaborations.</p>
+    </div>
+  </div>
+  <button class="arrow arrow-right" id="arrow-right">❯</button>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p data-en="© 2024 Alexandre Perez. All rights reserved."
+       data-pt="© 2024 Alexandre Perez. Todos os direitos reservados.">
+      © 2024 Alexandre Perez. All rights reserved.
+    </p>
+    <div class="language-switcher">
+      <button onclick="setLanguage('pt')">
+        <img src="assets/portugues01.svg" alt="Português">
+        <span>Português</span>
+      </button>
+      <button onclick="setLanguage('en')">
+        <img src="assets/english01.svg" alt="English">
+        <span>English</span>
+      </button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
