@@ -664,8 +664,10 @@ footer .language-switcher {
 /* Contêiner flexível para o slider */
 .services-slider-container {
   display: flex;
-  transition: transform 0.3s ease-in-out; /* Animação suave */
+  transition: transform 0.3s ease-in-out; /* Suaviza o movimento */
+  touch-action: pan-y; /* Permite deslizar horizontalmente sem interferir no scroll vertical */
 }
+
 
 .services-slider .service p {
   min-height: 4.5rem; /* Define um espaço fixo equivalente a 3 linhas de texto */

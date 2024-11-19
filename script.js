@@ -131,4 +131,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+let startX = 0; // Posição inicial do toque
+let endX = 0; // Posição final do toque
 
+const slider = document.querySelector('.services-slider-container');
+
+// Função que inicia o toque
+slider.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX; // Registra a posição inicial do toque
+});
+
+// Função que registra o movimento do dedo
+slider.addEventListener('touchmove', (e) => {
+  endX = e.touches[0].clientX; // Atualiza a posição conforme o dedo se move
+});
+
+// Função que determina a direção do deslizamento
+slider.addEventListener('touchend', () => {
+  if (startX > endX + 50) {
+    // Deslizar para a esquerda
+    nextServiceSlide();
+  } else if (startX < endX - 50) {
+    // Deslizar para a direita
+    previousServiceSlide();
+  }
+});
