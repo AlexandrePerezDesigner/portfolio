@@ -21,6 +21,8 @@ body {
 }
 
 
+
+
 /* ================================================
    HEADER
 ================================================ */
@@ -34,7 +36,7 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   background-color: #fff;
-  border-bottom: 2px solid #d26969;
+  border-bottom: 2px solid #dc625c;
 }
 
 /* ================================================
@@ -58,7 +60,7 @@ header nav ul {
 ================================================ */
 header nav ul li a {
   text-decoration: none;
-  color: #d26969;
+  color: #dc625c;
   font-weight: bold;
 }
 
@@ -85,7 +87,7 @@ header nav ul li a {
   top: 60px;
   right: 20px;
   background-color: #fff;
-  border: 1px solid #d26969;
+  border: 1px solid #dc625c;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -140,7 +142,7 @@ header nav ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #d26969;
+  background-color: #dc625c;
   color: #fff;
   padding: 2rem;
   text-align: center;
@@ -218,7 +220,7 @@ header nav ul li a {
 .service h3 {
   margin-top: 1rem;
   font-size: 1.2rem;
-  color: #d26969;
+  color: #dc625c;
 }
 
 .service p {
@@ -232,10 +234,10 @@ header nav ul li a {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #d26969; /* Fundo padrão */
+  background-color: #dc625c; /* Fundo padrão */
   color: #f9f9f9; /* Texto padrão */
   text-decoration: none;
-  border: 2px solid #d26969; /* Borda padrão */
+  border: 2px solid #dc625c; /* Borda padrão */
   border-radius: 5px;
   font-size: 0.9rem;
   font-weight: bold;
@@ -258,8 +260,8 @@ header nav ul li a {
 }
 
 .service .btn:hover {
-  color: #d26969; /* Texto no hover */
-  border-color: #d26969; /* Borda no hover */
+  color: #dc625c; /* Texto no hover */
+  border-color: #dc625c; /* Borda no hover */
 }
 
 .service .btn:hover::before {
@@ -307,7 +309,7 @@ header nav ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #d26969;
+  background-color: #dc625c;
   color: #fff;
   padding: 2rem;
 }
@@ -383,7 +385,7 @@ header nav ul li a {
 
 .desktop-nav a {
   text-decoration: none;
-  color: #d26969;
+  color: #dc625c;
   font-weight: bold;
   position: relative;
   transition: all 0.3s ease;
@@ -426,7 +428,7 @@ header nav ul li a {
   padding: 0.5rem 1rem; /* Ajusta o espaçamento interno */
   border: none; /* Remove borda */
   background: none; /* Remove fundo inicial */
-  color: #d26969; /* Texto na cor inicial */
+  color: #dc625c; /* Texto na cor inicial */
   font-size: 0.9rem; /* Tamanho do texto */
   cursor: pointer; /* Mostra que é clicável */
   position: relative; /* Necessário para o efeito de preenchimento */
@@ -447,7 +449,7 @@ header nav ul li a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #d26969; /* Cor do preenchimento */
+  background-color: #dc625c; /* Cor do preenchimento */
   z-index: -1; /* Fica atrás do texto e da bandeira */
   transition: top 0.3s ease; /* Suaviza o movimento de preenchimento */
 }
@@ -483,8 +485,16 @@ footer {
   background-color: #f9f9f9; /* Opcional: pode alterar o fundo */
   text-align: center;
   padding: 0.5rem 0;
-  color: #d26969; /* Cor do texto */
+  color: #dc625c; /* Cor do texto */
   font-size: 0.8rem; /* Tamanho reduzido do texto */
+}
+
+footer p {
+  margin-top: -1.0rem; /* Reduz a margem superior */
+  margin-bottom: 0; /* Remove espaço inferior, se necessário */
+  font-size: 0.9rem; /* Opcional: ajuste o tamanho da fonte, se necessário */
+  color: #d26969; /* Ajuste a cor, se desejar */
+  text-align: center; /* Centraliza o texto */
 }
 
 /* ================================================
@@ -545,7 +555,7 @@ footer .language-switcher {
   align-items: center;
   width: 80px; /* Largura da elipse */
   height: 80px; /* Altura da elipse */
-  background-color: #d26969; /* Cor da elipse */
+  background-color: #dc625c; /* Cor da elipse */
   border-radius: 50%; /* Forma redonda */
   margin: 0 auto 1rem; /* Centraliza e adiciona espaçamento inferior */
 }
@@ -563,19 +573,26 @@ footer .language-switcher {
   }
 }
 
+
+
+
 /* Slider para Mobile */
 
 
 .service {
   flex: 0 0 100%; /* Cada slide ocupa 100% da largura */
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem; /* Adiciona espaçamento interno para evitar cortes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .service img {
-  width: 80px;
+  max-width: 80px; /* Define tamanho máximo para os ícones */
   height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Espaço entre o ícone e o restante */
 }
 
 .arrow {
@@ -583,7 +600,7 @@ footer .language-switcher {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #d26969;
+  background-color: #dc625c;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -604,7 +621,6 @@ footer .language-switcher {
   display: none;
 }
 
-/* Slider para Mobile */
 /* Configuração do Slider */
 .services-slider {
   display: none; /* Oculto no desktop */
@@ -612,7 +628,7 @@ footer .language-switcher {
   overflow: hidden; /* Esconde os elementos fora da área visível */
   width: 100%;
   height: 300px; /* Define uma altura para o slider */
-  /*border: 2px solid #d26969;*/
+  /*border: 2px solid #dc625c;*/
   border-radius: 10px;
   /*background-color: #fff;*/
   padding: 1rem;
@@ -623,11 +639,41 @@ footer .language-switcher {
   margin-bottom: 100px; /* Adiciona espaço extra abaixo do slider */
 }
 
+.services-slider .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #d26969; /* Fundo padrão */
+  color: #fff; /* Texto padrão */
+  text-decoration: none;
+  border: 2px solid #d26969; /* Borda padrão */
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.services-slider .btn:hover {
+  color: #d26969; /* Texto no hover */
+  background-color: #fff; /* Fundo no hover */
+  border-color: #d26969; /* Borda no hover */
+}
+
 /* Contêiner flexível para o slider */
 .services-slider-container {
   display: flex;
   transition: transform 0.3s ease-in-out; /* Animação suave */
 }
+
+.services-slider .service p {
+  min-height: 4.5rem; /* Define um espaço fixo equivalente a 3 linhas de texto */
+  line-height: 1.5rem; /* Altura de linha para garantir espaçamento adequado */
+  margin-bottom: 1rem; /* Espaçamento entre o texto e o botão */
+  text-align: center; /* Garante alinhamento central */
+}
+
 
 /* Cada slide ocupa toda a largura e é centralizado */
 .service {
@@ -638,25 +684,32 @@ footer .language-switcher {
   flex-direction: column; /* Centraliza o conteúdo no eixo vertical */
   align-items: center; /* Centraliza o conteúdo horizontalmente */
   justify-content: center; /* Centraliza o conteúdo verticalmente */
-  height: 100%; /* Garante que o slide ocupe toda a altura */
+  /*height: 100%; /* Garante que o slide ocupe toda a altura */
+  height: 350px;
+
+  
 }
 
 .service img {
   width: 80px;
   height: auto;
   margin-bottom: 1rem;
+
+
 }
 
 .service h3 {
-  color: #d26969;
+  color: #dc625c;
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0; /* Ajuste de margem para melhor espaçamento */
 }
 
 .service p {
   color: #555;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  line-height: 1.5rem; /* Aumenta a altura da linha para legibilidade */
+  text-align: center;
+  min-height: 4.5rem; /* Garante espaço fixo para o texto */
 }
 
 /* Botões de navegação */
@@ -665,7 +718,7 @@ footer .language-switcher {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #d26969;
+  background-color: #dc625c;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -690,9 +743,12 @@ footer .language-switcher {
 /* Exibir o slider apenas no mobile */
 @media (max-width: 768px) {
   .services-slider {
+    margin-bottom: 8rem; /* Aumenta o espaço abaixo do slider */
     display: flex;
   }
 }
+
+
 
 header {
   position: fixed;
@@ -713,9 +769,40 @@ body {
     height: 60px; /* Altura específica para mobile */
   }
 
-  body {
-    padding-top: 60px; /* Ajusta o padding de acordo com a altura do header */
-  }
 }
 
+}
+
+/* Redes Sociais */
+.social-links {
+  margin-bottom: 0.5rem; /* Diminua o espaço abaixo dos ícones */
+  display: flex; /* Alinha os ícones horizontalmente */
+  justify-content: center; /* Centraliza os ícones */
+  gap: 0.5rem; /* Pequeno espaçamento entre os ícones */
+  margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+.social-links a {
+  display: flex; /* Configura o link como flex container */
+  align-items: center; /* Centraliza o ícone verticalmente */
+  justify-content: center; /* Centraliza o ícone horizontalmente */
+  width: 40px; /* Define o tamanho do link */
+  height: 40px; /* Define a altura do link */
+  text-decoration: none; /* Remove sublinhado padrão */
+  background: none; /* Remove fundo padrão */
+  cursor: pointer; /* Adiciona a mãozinha ao passar o mouse */
+  transition: transform 0.3s ease; /* Suaviza a animação */
+}
+
+.redes-icons {
+  width: 24px; /* Define a largura do ícone */
+  height: 24px; /* Define a altura do ícone */
+  object-fit: contain; /* Garante proporções corretas */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Suaviza zoom e brilho */
+}
+
+.social-links a:hover .redes-icons {
+  transform: scale(1.3); /* Amplia o ícone ao passar o mouse */
+  filter: brightness(1.2); /* Aumenta o brilho do ícone */
+}
 
