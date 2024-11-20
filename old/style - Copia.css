@@ -18,9 +18,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9; /* Cor de fundo geral */
-  padding-top: 80px; /* Ajuste o valor para evitar sobreposição do conteúdo pelo header */
 }
-
 
 
 
@@ -37,14 +35,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: background-color 0.5s ease, opacity 0.5s ease;
-  opacity: 1;
-  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+  background-color: #fff;
+  border-bottom: 2px solid #dc625c;
 }
 
 /* ================================================
@@ -76,37 +68,6 @@ header nav ul li a {
 .mobile-nav {
   display: none;
 }
-
-header.scrolled {
-  background-color: #dc625c;
-}
-
-header .logo img {
-  width: 150px;
-  transition: all 0.5s ease;
-}
-
-header.scrolled .logo img {
-  content: url("assets/logo2.png");
-}
-
-header nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-header nav ul li a {
-  text-decoration: none;
-  color: #dc625c;
-  font-weight: bold;
-  transition: color 0.5s ease;
-}
-
-header.scrolled nav ul li a {
-  color: #fff;
-}
-
 
 /* ================================================
    MENU MOBILE
@@ -845,38 +806,5 @@ body {
 .social-links a:hover .redes-icons {
   transform: scale(1.3); /* Amplia o ícone ao passar o mouse */
   filter: brightness(1.2); /* Aumenta o brilho do ícone */
-}
-
-
-/* Contêiner de rolagem */
-#scroll-container {
-  scroll-snap-type: y mandatory; /* Ativa o snap na direção vertical */
-  overflow-y: scroll; /* Permite rolar verticalmente */
-  height: 100vh; /* Cada seção ocupa 100% da altura da tela */
-}
-
-/* Cada seção */
-
-.scroll-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#portfolio {
-  background-color: #f0f0f0;
-}
-
-#highlights {
-  background-color: #e0e0e0;
-}
-
-#about {
-  background-color: #d0d0d0;
-}
-
-#contact {
-  background-color: #c0c0c0;
 }
 

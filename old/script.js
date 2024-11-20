@@ -157,46 +157,18 @@ slider.addEventListener('touchend', () => {
   }
 });
 
-// scrolled header
-document.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-});
 
-
-
-// GSAP Scroll Transition
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      const headerOffset = 80; // Ajuste para coincidir com o padding-top do CSS
-      const elementPosition = target.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - headerOffset;
-
-      gsap.to(window, {
-        duration: 1.5,
-        scrollTo: { y: offsetPosition },
-        ease: "power2.out",
-      });
+// PARALLAX
+// Transição suave entre as seções
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
     });
   });
 });
 
 
-
-// Sticky Header
-document.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-});

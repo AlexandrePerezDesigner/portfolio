@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services Slider</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Slider Section */
+    .services {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      overflow: hidden;
+      border: 2px solid #d26969;
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .services-slider {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .service {
+      flex: 0 0 100%;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .service img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .service h3 {
+      color: #d26969;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Buttons */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #d26969;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      z-index: 100; /* Garante que o botão fique acima de outros elementos */
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Adiciona o cursor de "mãozinha" */
+    .arrow:hover {
+      cursor: pointer;
+      background-color: #af4e4e; /* Adiciona efeito visual ao passar o mouse */
+    }
+  </style>
+</head>
+<body>
+  <section class="services">
+    <button class="arrow arrow-left hidden" id="arrow-left">❮</button>
+    <div class="services-slider">
+      <div class="service">
+        <img src="assets/portfolio.svg" alt="Portfolio Icon">
+        <h3>Portfolio</h3>
+        <p>Explore my design projects and creative solutions.</p>
+      </div>
+      <div class="service">
+        <img src="assets/highlights.svg" alt="Highlights Icon">
+        <h3>Highlights</h3>
+        <p>Discover key achievements and impactful work.</p>
+      </div>
+      <div class="service">
+        <img src="assets/about.svg" alt="About Icon">
+        <h3>About</h3>
+        <p>Get to know me and my journey as a designer.</p>
+      </div>
+      <div class="service">
+        <img src="assets/contact.svg" alt="Contact Icon">
+        <h3>Contact</h3>
+        <p>Reach out for inquiries or collaborations.</p>
+      </div>
+    </div>
+    <button class="arrow arrow-right" id="arrow-right">❯</button>
+  </section>
+
+  <script>
+    let currentSlide = 0;
+
+    function updateSlider() {
+      const slider = document.querySelector('.services-slider');
+      const totalSlides = document.querySelectorAll('.service').length;
+
+      // Move the slider to the correct position
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      // Update arrow visibility
+      document.getElementById('arrow-left').classList.toggle('hidden', currentSlide === 0);
+      document.getElementById('arrow-right').classList.toggle('hidden', currentSlide === totalSlides - 1);
+    }
+
+    function nextSlide() {
+      const totalSlides = document.querySelectorAll('.service').length;
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlider();
+      }
+    }
+
+    function previousSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlider();
+      }
+    }
+
+    // Attach events to buttons
+    document.getElementById('arrow-right').addEventListener('click', nextSlide);
+    document.getElementById('arrow-left').addEventListener('click', previousSlide);
+
+    // Initialize the slider on page load
+    document.addEventListener('DOMContentLoaded', updateSlider);
+  </script>
+</body>
+</html>
