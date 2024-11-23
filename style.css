@@ -13,8 +13,11 @@
 /* ================================================
    ESTILOS GERAIS
 ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9; /* Cor de fundo geral */
@@ -79,6 +82,8 @@ header nav ul li a {
 
 header.scrolled {
   background-color: #dc625c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
 }
 
 header .logo img {
@@ -88,6 +93,8 @@ header .logo img {
 
 header.scrolled .logo img {
   content: url("assets/logo2.png");
+  transform: scale(0.9);
+  transition: transform 0.5s ease;
 }
 
 header nav ul {
@@ -129,7 +136,13 @@ header.scrolled nav ul li a {
   border: 1px solid #dc625c;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+ transition: top 0.3s ease;
   z-index: 1000;
+}
+
+#mobile-menu.open {
+  transform: translateX(0);
 }
 
 /* ================================================
@@ -206,6 +219,9 @@ header.scrolled nav ul li a {
   justify-content: center;
   gap: 2rem;
   max-width: 1200px;
+  opacity: 0; /* Começa invisível */
+  transform: translateY(50px); /* Começa abaixo */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Animação suave */
 }
 
 /* ================================================
@@ -222,6 +238,14 @@ header.scrolled nav ul li a {
 .hero .intro-text h1 {
   font-size: 2rem;
   text-align: left;
+}
+
+@media (max-width: 768px) {
+.hero .intro-text h1 {
+  margin-top: -50px;
+  font-size: 2rem;
+  text-align: left;
+}
 }
 
 /* ================================================
@@ -245,11 +269,16 @@ header.scrolled nav ul li a {
   padding: 2rem;
   background-color: #f9f9f9;
   margin-top: 50px;
+  opacity: 0; /* Começa invisível */
+  transform: translateY(50px); /* Começa abaixo */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Animação suave */
 }
+
 
 .service {
   text-align: center;
   max-width: 250px;
+  flex: 1 1 calc(25% - 2rem); /* Ajuste para manter os itens mais próximos até que não caibam mais */
 }
 
 .service img {
@@ -263,6 +292,7 @@ header.scrolled nav ul li a {
 }
 
 .service p {
+  height: 60px;
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: #555;
@@ -272,19 +302,22 @@ header.scrolled nav ul li a {
 .service .btn {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #dc625c; /* Fundo padrão */
-  color: #f9f9f9; /* Texto padrão */
+  padding: 0.5rem 1.5rem;
+  background-color: #dc625c;
+  color: #f9f9f9;
   text-decoration: none;
-  border: 2px solid #dc625c; /* Borda padrão */
+  border: 2px solid #dc625c;
   border-radius: 5px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: bold;
   position: relative;
-  overflow: hidden; /* Limita a animação dentro do botão */
-  transition: all 0.3s ease; /* Suavidade */
-  z-index: 0; /* Corrige problemas de hierarquia */
+  overflow: hidden;
+  transition: all 0.4s ease, transform 0.2s ease;
+  z-index: 0;
+  white-space: nowrap; /* Impede a quebra do botão em duas linhas */
+  align-self: center; /* Alinha o botão à base do contêiner */
 }
+
 
 .service .btn::before {
   content: '';
@@ -301,6 +334,8 @@ header.scrolled nav ul li a {
 .service .btn:hover {
   color: #dc625c; /* Texto no hover */
   border-color: #dc625c; /* Borda no hover */
+  transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
 .service .btn:hover::before {
@@ -329,6 +364,9 @@ header.scrolled nav ul li a {
 ================================================ */
   .hero-content {
     flex-direction: column;
+      opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
   }
 
 /* ================================================
@@ -337,6 +375,9 @@ header.scrolled nav ul li a {
   .services {
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
   }
 }
 
@@ -419,6 +460,7 @@ header.scrolled nav ul li a {
 ================================================ */
   .hero .profile-photo {
     margin-bottom: 1.5rem;
+     width: 150px;
   }
 }
 
@@ -574,6 +616,7 @@ footer .language-switcher {
     overflow: hidden; /* Esconde os elementos fora da área visível */
   }
 
+
 /* ================================================
    SEÇÃO SERVICES
 ================================================ */
@@ -609,8 +652,14 @@ footer .language-switcher {
 @media (max-width: 768px) {
   .services {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
   }
 }
+
 
 
 
@@ -625,7 +674,7 @@ footer .language-switcher {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
 }
 
 .service img {
@@ -646,6 +695,7 @@ footer .language-switcher {
   cursor: pointer;
   border-radius: 5px;
   font-size: 1.2rem;
+  z-index: 100;
 }
 
 .arrow-left {
@@ -662,7 +712,7 @@ footer .language-switcher {
 
 /* Configuração do Slider */
 .services-slider {
-  display: none; /* Oculto no desktop */
+  display: flex; /* Oculto no desktop */
   position: relative;
   overflow: hidden; /* Esconde os elementos fora da área visível */
   width: 100%;
@@ -726,7 +776,7 @@ footer .language-switcher {
   align-items: center; /* Centraliza o conteúdo horizontalmente */
   justify-content: center; /* Centraliza o conteúdo verticalmente */
   /*height: 100%; /* Garante que o slide ocupe toda a altura */
-  height: 350px;
+  height: 355px;
 
   
 }
@@ -786,6 +836,7 @@ footer .language-switcher {
   .services-slider {
     margin-bottom: 8rem; /* Aumenta o espaço abaixo do slider */
     display: flex;
+    height: 340px;
   }
 }
 
@@ -858,14 +909,14 @@ body {
 /* Cada seção */
 
 .scroll-section {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #portfolio {
-  background-color: #f0f0f0;
+  /*background-color: #f0f0f0;*/
 }
 
 #highlights {

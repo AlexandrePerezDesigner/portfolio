@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Alexandre Perez</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-port.css">
 </head>
 <body>
   <!-- Header -->
@@ -136,7 +137,70 @@
 
   <!-- Portfolio Page -->
   <section id="portfolio" class="scroll-section">
-    <h1>Portfolio</h1>
+    <div class="tabs">
+        <button id="webTab" class="active" onclick="showSection('web')">Web</button>
+        <button id="videosTab" onclick="showSection('videos')">Vídeos</button>
+        <button id="graphicTab" onclick="showSection('graphic')">Graphic</button>
+        <button id="brandingTab" onclick="showSection('branding')">Branding</button>
+    </div>
+
+    <div id="web" class="portfolio show">
+        <div class="thumb" onclick="openPopup(1)"><img src="assets/p1.jpg" alt="Thumb 1"><span class="thumb-title">Projeto 1</span></div>
+        <div class="thumb" onclick="openPopup(2)"><img src="assets/p2.jpg" alt="Thumb 2"><span class="thumb-title">Projeto 2</span></div>
+        <div class="thumb" onclick="openPopup(3)"><img src="assets/p3.jpg" alt="Thumb 3"><span class="thumb-title">Projeto 3</span></div>
+        <div class="thumb" onclick="openPopup(4)"><img src="assets/p4.jpg" alt="Thumb 4"><span class="thumb-title">Projeto 4</span></div>
+        <div class="thumb" onclick="openPopup(5)"><img src="assets/p5.jpg" alt="Thumb 5"><span class="thumb-title">Projeto 5</span></div>
+        <div class="thumb" onclick="openPopup(6)"><img src="assets/p6.jpg" alt="Thumb 6"><span class="thumb-title">Projeto 6</span></div>
+    </div>
+
+    <div id="videos" class="portfolio">
+        <div class="thumb" onclick="openPopup(7)"><img src="assets/p1.jpg" alt="Thumb 1"><span class="thumb-title">Vídeo 1</span></div>
+        <div class="thumb" onclick="openPopup(8)"><img src="assets/p2.jpg" alt="Thumb 2"><span class="thumb-title">Vídeo 2</span></div>
+        <div class="thumb" onclick="openPopup(9)"><img src="assets/p3.jpg" alt="Thumb 3"><span class="thumb-title">Vídeo 3</span></div>
+        <div class="thumb" onclick="openPopup(10)"><img src="assets/p4.jpg" alt="Thumb 4"><span class="thumb-title">Vídeo 4</span></div>
+        <div class="thumb" onclick="openPopup(11)"><img src="assets/p5.jpg" alt="Thumb 5"><span class="thumb-title">Vídeo 5</span></div>
+        <div class="thumb" onclick="openPopup(12)"><img src="assets/p6.jpg" alt="Thumb 6"><span class="thumb-title">Vídeo 6</span></div>
+    </div>
+
+    <div id="graphic" class="portfolio">
+        <div class="thumb" onclick="openPopup(13)"><img src="assets/p1.jpg" alt="Thumb 1"><span class="thumb-title">Graphic 1</span></div>
+        <div class="thumb" onclick="openPopup(14)"><img src="assets/p2.jpg" alt="Thumb 2"><span class="thumb-title">Graphic 2</span></div>
+        <div class="thumb" onclick="openPopup(15)"><img src="assets/p3.jpg" alt="Thumb 3"><span class="thumb-title">Graphic 3</span></div>
+        <div class="thumb" onclick="openPopup(16)"><img src="assets/p4.jpg" alt="Thumb 4"><span class="thumb-title">Graphic 4</span></div>
+        <div class="thumb" onclick="openPopup(17)"><img src="assets/p5.jpg" alt="Thumb 5"><span class="thumb-title">Graphic 5</span></div>
+        <div class="thumb" onclick="openPopup(18)"><img src="assets/p6.jpg" alt="Thumb 6"><span class="thumb-title">Graphic 6</span></div>
+    </div>
+
+    <div id="branding" class="portfolio">
+        <div class="thumb" onclick="openPopup(19)"><img src="assets/p1.jpg" alt="Thumb 1"><span class="thumb-title">Branding 1</span></div>
+        <div class="thumb" onclick="openPopup(20)"><img src="assets/p2.jpg" alt="Thumb 2"><span class="thumb-title">Branding 2</span></div>
+        <div class="thumb" onclick="openPopup(21)"><img src="assets/p3.jpg" alt="Thumb 3"><span class="thumb-title">Branding 3</span></div>
+        <div class="thumb" onclick="openPopup(22)"><img src="assets/p4.jpg" alt="Thumb 4"><span class="thumb-title">Branding 4</span></div>
+        <div class="thumb" onclick="openPopup(23)"><img src="assets/p5.jpg" alt="Thumb 5"><span class="thumb-title">Branding 5</span></div>
+        <div class="thumb" onclick="openPopup(24)"><img src="assets/p6.jpg" alt="Thumb 6"><span class="thumb-title">Branding 6</span></div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div class="popup-image">
+                <img id="popupImg" src="" alt="Imagem Expandida" onclick="openExpandedPopup()">
+                <div class="navigation">
+                    <span class="prev" onclick="prevImage()">&#10094;</span>
+                    <span class="next" onclick="nextImage()">&#10095;</span>
+                </div>
+            </div>
+            <div class="popup-text">
+                <h2 id="popupTitle">Título</h2>
+                <p id="popupDescription">Texto descritivo sobre a imagem. Aqui vai uma breve descrição do trabalho mostrado.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="expandedPopup" class="expanded-popup">
+        <span class="expanded-close" onclick="closeExpandedPopup()">&times;</span>
+        <img id="expandedImg" src="" alt="Imagem Expandida">
+    </div>
   </section>
 
   <!-- Highlights Page -->
@@ -196,6 +260,7 @@
 
 
   <script src="script.js"></script>
+    <script src="script-port.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js" defer></script>
 </body>

@@ -20,7 +20,11 @@ function updateServiceSlider() {
 
   const totalSlides = document.querySelectorAll('.services-slider-container .service').length;
 
-  slider.style.transform = `translateX(-${currentServiceSlide * 100}%)`;
+  gsap.to(slider, {
+    duration: 0.8,
+    x: -currentServiceSlide * 100 + '%',
+    ease: 'power2.inOut'
+  });
 
   const leftArrow = document.getElementById('services-arrow-left');
   const rightArrow = document.getElementById('services-arrow-right');
@@ -99,7 +103,11 @@ function updateSlider() {
 
   // Move o slider para o slide ativo
   const sliderContainer = document.querySelector('.services-slider-container');
-  sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+  gsap.to(sliderContainer, {
+    duration: 0.2,
+    x: -currentSlide * 100 + '%',
+    ease: 'power2.inOut'
+  });
 
   // Atualiza a visibilidade dos botões
   document.getElementById('arrow-left').classList.toggle('hidden', currentSlide === 0);
@@ -157,18 +165,6 @@ slider.addEventListener('touchend', () => {
   }
 });
 
-// scrolled header
-document.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-});
-
-
-
 // GSAP Scroll Transition
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll('a[href^="#"]');
@@ -189,8 +185,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
 // Sticky Header
 document.addEventListener("scroll", function () {
   const header = document.querySelector("header");
@@ -198,5 +192,40 @@ document.addEventListener("scroll", function () {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const heroContent = document.querySelector(".hero-content");
+  const servicesSection = document.querySelector(".services");
+
+  setTimeout(() => {
+    heroContent.style.opacity = 1;
+    heroContent.style.transform = 'translateY(0)';
+  }, 300);
+
+  setTimeout(() => {
+    servicesSection.style.opacity = 1;
+    servicesSection.style.transform = 'translateY(0)';
+  }, 600);
+
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector("#mobile-menu");
+
+  hamburger.addEventListener("click", function () {
+    mobileMenu.classList.toggle("open");
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const leftArrow = document.querySelector('.arrow-left');
+  const rightArrow = document.querySelector('.arrow-right');
+
+  if (leftArrow) {
+    leftArrow.addEventListener('click', previousServiceSlide);
+  }
+
+  if (rightArrow) {
+    rightArrow.addEventListener('click', nextServiceSlide);
   }
 });
