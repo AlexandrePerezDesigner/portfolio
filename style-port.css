@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden; /* Remover scroll lateral */
+}
+
         .tabs {
             display: flex;
             gap: 20px;
