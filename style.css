@@ -858,11 +858,6 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona um leve efeito de sombra */
 }
 
-body {
-  padding-top: 60px; /* Adiciona espaço suficiente para evitar sobreposição do conteúdo pelo header */
-  overflow-x: hidden; /* Remover scroll lateral */
-}
-
 @media (max-width: 768px) {
   header {
     height: 60px; /* Altura específica para mobile */
