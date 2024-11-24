@@ -23,63 +23,69 @@ const images = [
             { src: 'assets/p4.jpg', title: 'Branding 4', description: 'Descrição do branding 4.' },
             { src: 'assets/p5.jpg', title: 'Branding 5', description: 'Descrição do branding 5.' },
             { src: 'assets/p6.jpg', title: 'Branding 6', description: 'Descrição do branding 6.' }
-        ];
+];
 
-        let currentImageIndex = 0;
+let currentImageIndex = 0;
 
-        function openPopup(index) {
-            currentImageIndex = index - 1;
-            updatePopupContent();
-            const popup = document.getElementById('popup');
-            popup.classList.add('show');
-        }
+function openPopup(index) {
+    currentImageIndex = index - 1;
+    updatePopupContent();
+    const popup = document.getElementById('popup');
+    popup.classList.add('show');
+}
 
-        function closePopup() {
-            const popup = document.getElementById('popup');
-            popup.classList.remove('show');
-        }
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.classList.remove('show');
+}
 
-        function prevImage() {
-            currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
-            updatePopupContent();
-        }
+function prevImage() {
+    currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
+    updatePopupContent();
+}
 
-        function nextImage() {
-            currentImageIndex = (currentImageIndex === images.length - 1) ? 0 : currentImageIndex + 1;
-            updatePopupContent();
-        }
+function nextImage() {
+    currentImageIndex = (currentImageIndex === images.length - 1) ? 0 : currentImageIndex + 1;
+    updatePopupContent();
+}
 
-        function updatePopupContent() {
-            document.getElementById('popupImg').src = images[currentImageIndex].src;
-            document.getElementById('popupTitle').innerText = images[currentImageIndex].title;
-            document.getElementById('popupDescription').innerText = images[currentImageIndex].description;
-        }
+function updatePopupContent() {
+    document.getElementById('popupImg').src = images[currentImageIndex].src;
+    document.getElementById('popupTitle').innerText = images[currentImageIndex].title;
+    document.getElementById('popupDescription').innerText = images[currentImageIndex].description;
+}
 
-        function openExpandedPopup() {
-            const expandedPopup = document.getElementById('expandedPopup');
-            const expandedImg = document.getElementById('expandedImg');
-            expandedImg.src = images[currentImageIndex].src;
-            expandedPopup.classList.add('show');
-        }
+function openExpandedPopup() {
+    const expandedPopup = document.getElementById('expandedPopup');
+    const expandedImg = document.getElementById('expandedImg');
+    expandedImg.src = images[currentImageIndex].src;
+    expandedPopup.classList.add('show');
+}
 
-        function closeExpandedPopup() {
-            const expandedPopup = document.getElementById('expandedPopup');
-            expandedPopup.classList.remove('show');
-        }
+function closeExpandedPopup() {
+    const expandedPopup = document.getElementById('expandedPopup');
+    expandedPopup.classList.remove('show');
+}
 
-        function showSection(sectionId) {
-            // Remove 'show' class from all portfolios
-            document.querySelectorAll('.portfolio').forEach(portfolio => {
-                portfolio.classList.remove('show');
-            });
+function showSection(sectionId) {
+    // Remove 'show' class from all portfolios
+    document.querySelectorAll('.portfolio').forEach(portfolio => {
+        portfolio.classList.remove('show');
+    });
 
-            // Add 'show' class to the selected portfolio
-            const selectedPortfolio = document.getElementById(sectionId);
-            selectedPortfolio.classList.add('show');
+    // Add 'show' class to the selected portfolio
+    const selectedPortfolio = document.getElementById(sectionId);
+    selectedPortfolio.classList.add('show');
 
-            // Update tab styles
-            document.querySelectorAll('.tabs button').forEach(button => {
-                button.classList.remove('active');
-            });
-            document.getElementById(sectionId + 'Tab').classList.add('active');
-        }
+    // Update tab styles
+    document.querySelectorAll('.tabs button').forEach(button => {
+        button.classList.remove('active');
+    });
+    document.getElementById(sectionId + 'Tab').classList.add('active');
+}
+
+// Garantir que apenas uma seção seja visível ao mesmo tempo
+document.addEventListener('DOMContentLoaded', () => {
+    // Mostrar apenas a primeira seção por padrão
+    showSection('web');
+});
