@@ -21,7 +21,7 @@ function updateServiceSlider() {
   const totalSlides = document.querySelectorAll('.services-slider-container .service').length;
 
   gsap.to(slider, {
-    duration: 0.8,
+    duration: 0.3,
     x: -currentServiceSlide * 100 + '%',
     ease: 'power2.inOut'
   });
