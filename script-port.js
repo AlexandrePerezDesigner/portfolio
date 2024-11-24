@@ -68,19 +68,35 @@ function closeExpandedPopup() {
 }
 
 function showSection(sectionId) {
-    // Remove 'show' class from all portfolios
-    document.querySelectorAll('.portfolio').forEach(portfolio => {
-        portfolio.classList.remove('show');
-        portfolio.style.opacity = 0;
-    });
+    // Obter a seção atualmente visível
+    const currentSection = document.querySelector('.portfolio.show');
+    if (currentSection) {
+        // Ocultar a seção atual com transição de opacidade
+        currentSection.style.transition = 'opacity 0.5s ease';
+        currentSection.style.opacity = 0;
+        setTimeout(() => {
+            currentSection.classList.remove('show');
+            // Mostrar a nova seção após a anterior ser ocultada
+            const selectedPortfolio = document.getElementById(sectionId);
+            selectedPortfolio.style.opacity = 0;
+            selectedPortfolio.classList.add('show');
+            selectedPortfolio.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                selectedPortfolio.style.opacity = 1;
+            }, 10);
+        }, 500);
+    } else {
+        // Se não houver seção atual, apenas mostrar a nova seção
+        const selectedPortfolio = document.getElementById(sectionId);
+        selectedPortfolio.style.opacity = 0;
+        selectedPortfolio.classList.add('show');
+        selectedPortfolio.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+            selectedPortfolio.style.opacity = 1;
+        }, 10);
+    }
 
-    // Add 'show' class to the selected portfolio with fade effect
-    const selectedPortfolio = document.getElementById(sectionId);
-    selectedPortfolio.classList.add('show');
-    selectedPortfolio.style.transition = 'opacity 0.5s ease';
-    selectedPortfolio.style.opacity = 1;
-
-    // Update tab styles
+    // Atualizar o estilo das abas
     document.querySelectorAll('.tabs button').forEach(button => {
         button.classList.remove('active');
     });
