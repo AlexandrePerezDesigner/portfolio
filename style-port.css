@@ -29,10 +29,33 @@
     background: none;
     border: none;
     cursor: pointer;
+    position: relative;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+}
+
+.tabs button:hover {
+    color: #af4e4e; /* Cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Ampliação suave ao passar o mouse */
+}
+
+.tabs button::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; /* Distância do texto */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #af4e4e;
+    transition: width 0.3s ease;
+}
+
+.tabs button:hover::after {
+    width: 100%; /* Animação para preencher a largura */
 }
 
 .tabs button.active {
-    font-weight: bold;
+    color: #b04a46; /* Cor diferenciada para o botão ativo */
 }
 
 .portfolio-wrapper {
