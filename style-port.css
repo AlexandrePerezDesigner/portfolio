@@ -36,17 +36,18 @@
 }
 
 .portfolio-wrapper {
+    padding-top: 70px;
     display: flex;
-   /* justify-content: center;*/
+    justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100vh; /* Garantir que ocupe a altura total da tela */
+    height: 100%;
     margin: 0 auto; /* Centralizar o wrapper horizontalmente */
-    padding: 20px; /* Espaçamento adicional para garantir que o conteúdo não fique muito próximo das bordas */
 }
 
 .portfolio {
-    display: grid;
+    display: none; /* Esconder todas as seções inicialmente */
+    /*display: grid;*/
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
@@ -60,6 +61,7 @@
 }
 
 .portfolio.show {
+        display: grid; /* Mostrar a seção ativa */
     opacity: 1;
     transform: translateY(0); /* Suave movimento para dentro da tela */
 }

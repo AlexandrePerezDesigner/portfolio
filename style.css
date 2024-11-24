@@ -917,6 +917,15 @@ header {
   justify-content: center;
 }
 
+.scroll-section-port {
+ /* margin-top: 15vh;*/
+  margin-top: 10px;
+  height: 80vh;
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+}
+
 /*#portfolio {
   overflow-x: hidden; /* Remover scroll lateral
 }*/
