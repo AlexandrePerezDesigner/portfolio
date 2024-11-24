@@ -103,8 +103,4 @@ function showSection(sectionId) {
     document.getElementById(sectionId + 'Tab').classList.add('active');
 }
 
-// Garantir que apenas uma seção seja visível ao mesmo tempo
-document.addEventListener('DOMContentLoaded', () => {
-    // Mostrar apenas a primeira seção por padrão
-    showSection('web');
-});
+
