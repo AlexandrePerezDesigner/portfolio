@@ -10,14 +10,14 @@
         .tabs {
             display: flex;
             gap: 20px;
-            /*margin-top: -470px;*/
+            margin-top: -470px;
         }
 
         @media (max-width: 768px) {
         .tabs {
             display: flex;
             gap: 20px;
-            /*margin-top: -420px;*/
+            margin-top: -420px;
   }
 
 }
