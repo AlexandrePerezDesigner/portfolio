@@ -917,10 +917,9 @@ header {
   justify-content: center;
 }
 
-#portfolio {
-  /*background-color: #f0f0f0;*/
-  overflow-x: hidden; /* Remover scroll lateral */
-}
+/*#portfolio {
+  overflow-x: hidden; /* Remover scroll lateral
+}*/
 
 #highlights {
   background-color: #e0e0e0;
