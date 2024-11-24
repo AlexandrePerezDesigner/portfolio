@@ -71,11 +71,14 @@ function showSection(sectionId) {
     // Remove 'show' class from all portfolios
     document.querySelectorAll('.portfolio').forEach(portfolio => {
         portfolio.classList.remove('show');
+        portfolio.style.opacity = 0;
     });
 
-    // Add 'show' class to the selected portfolio
+    // Add 'show' class to the selected portfolio with fade effect
     const selectedPortfolio = document.getElementById(sectionId);
     selectedPortfolio.classList.add('show');
+    selectedPortfolio.style.transition = 'opacity 0.5s ease';
+    selectedPortfolio.style.opacity = 1;
 
     // Update tab styles
     document.querySelectorAll('.tabs button').forEach(button => {
