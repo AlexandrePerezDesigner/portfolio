@@ -10,6 +10,7 @@
     display: flex;
     gap: 20px;
     margin-top: 0; /* Removido valor negativo para evitar problemas no layout */
+    justify-content: center; /* Centralizar tabs horizontalmente */
 }
 
 @media (max-width: 768px) {
@@ -17,6 +18,7 @@
         display: flex;
         gap: 20px;
         margin-top: 0; /* Removido valor negativo no mobile também */
+        justify-content: center; /* Centralizar tabs no mobile também */
     }
 }
 
@@ -33,33 +35,47 @@
     font-weight: bold;
 }
 
+.portfolio-wrapper {
+    display: flex;
+   /* justify-content: center;*/
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /* Garantir que ocupe a altura total da tela */
+    margin: 0 auto; /* Centralizar o wrapper horizontalmente */
+    padding: 20px; /* Espaçamento adicional para garantir que o conteúdo não fique muito próximo das bordas */
+}
+
 .portfolio {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
     justify-items: center;
-    margin-top: 20px;
+    align-items: center; /* Adicionado para centralizar verticalmente */
+    margin: 0 auto; /* Centralizado horizontalmente */
     opacity: 0;
-    position: relative; /* Alterado de absolute para relative para evitar problemas de posicionamento */
-    transition: opacity 0.5s ease; /* Alterado para uma transição de opacidade */
+    position: relative;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(50px); /* Adicionado para iniciar levemente fora da tela */
 }
 
 .portfolio.show {
     opacity: 1;
+    transform: translateY(0); /* Suave movimento para dentro da tela */
 }
 
 @media (max-width: 768px) {
     .portfolio {
         grid-template-columns: repeat(2, 1fr);
-        display: grid;
         gap: 10px;
-        max-width: 1200px;
+        max-width: 100%; /* Ajustado para ocupar a largura total no mobile */
         justify-items: center;
-        margin-top: 20px;
+        align-items: center; /* Adicionado para centralizar verticalmente no mobile */
+        margin: 0 auto; /* Centralizado horizontalmente no mobile */
         opacity: 0;
-        position: relative; /* Alterado de absolute para relative no mobile também */
-        transition: opacity 0.5s ease; /* Alterado para uma transição de opacidade */
+        position: relative;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(50px); /* Inicia levemente fora da tela */
     }
 
     .popup-content {
