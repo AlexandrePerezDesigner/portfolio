@@ -1,11 +1,11 @@
-html{
-    overflow-x: hidden; /* Remover scroll lateral */
-}
+/*html{
+    overflow-x: hidden; /* Remover scroll lateral 
+}*/
 
 
-body {
-  overflow-x: hidden; /* Remover scroll lateral */
-}
+/*body {
+  overflow-x: hidden; /* Remover scroll lateral 
+}*/
 
         .tabs {
             display: flex;
@@ -101,8 +101,8 @@ body {
             overflow: hidden;
         }
 
-@media (max-width: 768px) {
-  .thumb {
+        @media (max-width: 768px) {
+        .thumb {
             width: 170px;
             height: 120px;
             display: flex;
@@ -181,7 +181,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-
         .popup-image {
             flex: 1;
             display: flex;
@@ -221,8 +220,6 @@ body {
             font-size: 36px;
             color: #d9534f;
         }
-
-
 
         .expanded-popup {
             position: fixed;
