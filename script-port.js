@@ -22,7 +22,20 @@ const images = [
             { src: 'assets/p3.jpg', title: 'Branding 3', description: 'Descrição do branding 3.' },
             { src: 'assets/p4.jpg', title: 'Branding 4', description: 'Descrição do branding 4.' },
             { src: 'assets/p5.jpg', title: 'Branding 5', description: 'Descrição do branding 5.' },
-            { src: 'assets/p6.jpg', title: 'Branding 6', description: 'Descrição do branding 6.' }
+            { src: 'assets/p6.jpg', title: 'Branding 6', description: 'Descrição do branding 6.' },
+            { src: 'assets/p1.jpg', title: 'Emkt 1', description: 'Descrição do Emkt 1.' },
+            { src: 'assets/p2.jpg', title: 'Emkt 2', description: 'Descrição do Emkt 2.' },
+            { src: 'assets/p3.jpg', title: 'Emkt 3', description: 'Descrição do Emkt 3.' },
+            { src: 'assets/p4.jpg', title: 'Emkt 4', description: 'Descrição do Emkt 4.' },
+            { src: 'assets/p5.jpg', title: 'Emkt 5', description: 'Descrição do Emkt 5.' },
+            { src: 'assets/p6.jpg', title: 'Emkt 6', description: 'Descrição do Emkt 6.' },
+
+            { src: 'assets/p1.jpg', title: 'Banner 1', description: 'Descrição do Banner 1.' },
+            { src: 'assets/p2.jpg', title: 'Banner 2', description: 'Descrição do Banner 2.' },
+            { src: 'assets/p3.jpg', title: 'Banner 3', description: 'Descrição do Emkt 3.' },
+            { src: 'assets/p4.jpg', title: 'Banner 4', description: 'Descrição do Emkt 4.' },
+            { src: 'assets/p5.jpg', title: 'Banner 5', description: 'Descrição do Emkt 5.' },
+            { src: 'assets/p6.jpg', title: 'Banner 6', description: 'Descrição do Emkt 6.' }
 ];
 
 let currentImageIndex = 0;

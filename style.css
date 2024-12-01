@@ -263,6 +263,58 @@ header.scrolled nav ul li a {
   text-align: left;
 }
 
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero {
+    flex-direction: row; /* Para tablets, organiza lado a lado */
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1000px; /* Ajusta a largura máxima para centralizar o conteúdo */
+  }
+
+  .hero .profile-photo {
+    max-width: 100px;
+    width: 200px; /* Aumenta a largura para tablets */
+  }
+
+  .hero .intro-text {
+    max-width: 600px; /* Define uma largura adequada para o texto */
+    text-align: left; /* Texto alinhado à esquerda para tablets */
+  }
+}
+
+/* Media query para iPad Pro 11 */
+@media (min-width: 834px) and (max-width: 1194px) {
+  .hero {
+    flex-direction: row; /* Para iPad Pro, organiza lado a lado */
+    padding: 3rem; /* Aumenta o padding para um visual mais espaçoso */
+    gap: 2rem;
+  }
+
+  .hero-content {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1100px; /* Ajusta a largura máxima para centralizar o conteúdo */
+    padding: 1rem; /* Garante que o conteúdo não fique muito próximo das bordas */
+  }
+
+  .hero .profile-photo {
+    width: 220px; /* Ajusta a largura para iPad Pro */
+  }
+
+  .hero .intro-text {
+    max-width: 700px; /* Define uma largura adequada para o texto no iPad Pro */
+    text-align: left; /* Texto alinhado à esquerda para iPad Pro */
+    font-size: 1.2rem; /* Ajuste no tamanho da fonte para melhor legibilidade */
+  }
+}
+
+
 /* Services Section */
 /* ================================================
    SEÇÃO SERVICES
@@ -924,6 +976,17 @@ header {
   /*display: flex;*/
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .scroll-section-port {
+ /* margin-top: 15vh;*/
+  margin-top: 10px;
+  height: 80vh;
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+    }
 }
 
 /*#portfolio {
