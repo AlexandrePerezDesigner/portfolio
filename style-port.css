@@ -232,7 +232,7 @@
 }
 
 .thumb:hover .thumb-title {
-    opacity: 0; /* Esconde o título ao passar o mouse */
+    opacity: 50; /* Esconde o título ao passar o mouse */
 }
 
 .thumb:hover::before {
@@ -321,13 +321,22 @@
 }
 
 .navigation {
+margin-left: 18%;
+    display: none;
     position: absolute;
-    top: 50%;
+    top: 100%;
     transform: translateY(-50%);
-    width: 100%;
-    display: flex;
+    width: 10%;
     justify-content: space-between;
     pointer-events: auto;
+}
+
+
+
+
+/* Show navigation arrows only for projects with multiple images */
+.project-with-multiple-images .navigation {
+    display: flex;
 }
 
 .prev {
