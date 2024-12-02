@@ -140,7 +140,7 @@
   <section id="portfolio" class="scroll-section-port">
    <div class="tabs">
         <button id="webTab" class="active" onclick="showSection('web')">Web</button>
-        <button id="videosTab" onclick="showSection('videos')">Vídeos</button>
+        <button id="videosTab" onclick="showSection('videos')">Motion</button>
         <button id="graphicTab" onclick="showSection('graphic')">Graphic</button>
         <button id="brandingTab" onclick="showSection('branding')">Branding</button>
         <button id="emktTab" onclick="showSection('emkt')">E-Mail Marketing</button>
@@ -148,6 +148,10 @@
     </div>
 
 <div id="web" class="portfolio show">
+    <div class="thumb project-with-multiple-images" onclick="openPopup(1)">
+        <img src="portfolio/00-th-sbt.jpg" alt="Net Combo">
+        <span class="thumb-title">+SBT</span>
+    </div>  
     <div class="thumb project-with-multiple-images" onclick="openPopup(1)">
         <img src="portfolio/01-th-net.jpg" alt="Net Combo">
         <span class="thumb-title">Net Combo</span>
@@ -165,12 +169,8 @@
         <span class="thumb-title">Caoa Consórcios</span>
     </div>
     <div class="thumb" onclick="openPopup(5)">
-        <img src="assets/p5.jpg" alt="Thumb 5">
-        <span class="thumb-title">Projeto 5</span>
-    </div>
-    <div class="thumb" onclick="openPopup(6)">
-        <img src="assets/p6.jpg" alt="Thumb 6">
-        <span class="thumb-title">Projeto 6</span>
+        <img src="portfolio/05-th-lopes.jpg" alt="Thumb 5">
+        <span class="thumb-title">Lopes</span>
     </div>
 </div>
 
@@ -231,7 +231,7 @@
             <span class="next" onclick="nextImage()">&#10095;</span>
         </div>
         <div class="popup-text">
-            <h3 id="popupTitle"></h3>
+            <h3 id="popupTitle" style="font-size: 26px; <p id=" popupdescription"="">Net Combo - Landing Page</h3>
             <p id="popupDescription"></p>
         </div>
 

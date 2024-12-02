@@ -2,8 +2,8 @@ const projects = [
     {
         id: 1,
         images: [
-            { src: 'portfolio/01net1.jpg', title: 'Net Combo - Imagem 1', description: 'Descrição do projeto Net Combo - Imagem 1.' },
-            { src: 'portfolio/01net2.jpg', title: 'Net Combo - Imagem 2', description: 'Descrição do projeto Net Combo - Imagem 2.' }
+            { src: 'portfolio/01net1.jpg', title: 'Net Combo - Landing Page', description: 'Esta landing page promove o pacote Net Combo, destacando internet, TV por assinatura e telefone fixo. A primeira tela apresenta a oferta de 30 Mega por R$ 59,90 ao mês, com botões Verificar Disponibilidade. Ao clicar, o usuário é levado para uma segunda tela, onde insere seus dados para checar a disponibilidade do serviço. O design é direto, com cores vibrantes e botões estrategicamente posicionados para incentivar a conversão, facilitando o entendimento dos benefícios e a adesão ao serviço.' },
+            { src: 'portfolio/01net2.jpg', title: 'Net Combo - Landing Page', description: 'Descrição do projeto Net Combo - Imagem 2.' }
         ]
     },
     {
