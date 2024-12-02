@@ -184,8 +184,8 @@
 }
 
 .thumb {
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    height: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -298,8 +298,8 @@
     position: relative;
     display: flex;
     gap: 20px;
-    max-width: 80%; /* Uniformizar tamanho do popup */
-    max-height: 80%; /* Ajuste menor para garantir uniformidade */
+    max-width: 90%; /* Uniformizar tamanho do popup */
+    max-height: 90%; /* Ajuste menor para garantir uniformidade */
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
