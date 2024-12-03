@@ -5,13 +5,17 @@
       "images": [
         {
           "src": "portfolio/01net1.jpg",
-          "title": "Net Combo - Landing Page",
-          "description": "Esta landing page promove o pacote Net Combo, destacando internet, TV por assinatura e telefone fixo. A primeira tela apresenta a oferta de 30 Mega por R$ 59,90 ao mês, com botões Verificar Disponibilidade. Ao clicar, o usuário é levado para uma segunda tela, onde insere seus dados para checar a disponibilidade do serviço. O design é direto, com cores vibrantes e botões estrategicamente posicionados para incentivar a conversão, facilitando o entendimento dos benefícios e a adesão ao serviço."
+          "title_pt": "Net Combo - Página de Destino",
+          "title_en": "Net Combo - Landing Page",
+          "description_pt": "Esta landing page promove o pacote Net Combo, destacando internet, TV por assinatura e telefone fixo. A primeira tela apresenta a oferta de 30 Mega por R$ 59,90 ao mês, com botões Verificar Disponibilidade. Ao clicar, o usuário é levado para uma segunda tela, onde insere seus dados para checar a disponibilidade do serviço. O design é direto, com cores vibrantes e botões estrategicamente posicionados para incentivar a conversão, facilitando o entendimento dos benefícios e a adesão ao serviço.",
+          "description_en": "This landing page promotes the Net Combo package, highlighting internet, TV subscription, and landline services. The first screen presents the 30 Mbps offer for R$ 59.90 per month, with \"Check Availability\" buttons. Upon clicking, users are taken to a second screen where they enter their details to verify service availability. The design is straightforward, with vibrant colors and strategically positioned buttons to encourage conversion, making it easy for users to understand the benefits and subscribe to the service."
         },
         {
           "src": "portfolio/01net2.jpg",
-          "title": "Net Combo - Landing Page",
-          "description": "Descrição do projeto Net Combo - Imagem 2."
+          "title_pt": "Net Combo - Página de Destino",
+          "title_en": "Net Combo - Landing Page",
+          "description_pt": "Descrição do projeto Net Combo - Imagem 2.",
+          "description_en": "Description of the Net Combo project - Image 2."
         }
       ]
     },
@@ -20,8 +24,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 2",
-          "description": "Descrição do projeto 2."
+          "title_pt": "Projeto 2",
+          "title_en": "Project 2",
+          "description_pt": "Descrição do projeto 2.",
+          "description_en": "Description of project 2."
         }
       ]
     },
@@ -30,8 +36,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 3",
-          "description": "Descrição do projeto 3."
+          "title_pt": "Projeto 3",
+          "title_en": "Project 3",
+          "description_pt": "Descrição do projeto 3.",
+          "description_en": "Description of project 3."
         }
       ]
     },
@@ -40,8 +48,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 4",
-          "description": "Descrição do projeto 4."
+          "title_pt": "Projeto 4",
+          "title_en": "Project 4",
+          "description_pt": "Descrição do projeto 4.",
+          "description_en": "Description of project 4."
         }
       ]
     },
@@ -50,8 +60,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 5",
-          "description": "Descrição do projeto 5."
+          "title_pt": "Projeto 5",
+          "title_en": "Project 5",
+          "description_pt": "Descrição do projeto 5.",
+          "description_en": "Description of project 5."
         }
       ]
     },
@@ -60,8 +72,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 6",
-          "description": "Descrição do projeto 6."
+          "title_pt": "Projeto 6",
+          "title_en": "Project 6",
+          "description_pt": "Descrição do projeto 6.",
+          "description_en": "Description of project 6."
         }
       ]
     },
@@ -70,8 +84,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 7",
-          "description": "Descrição do projeto 7."
+          "title_pt": "Projeto 7",
+          "title_en": "Project 7",
+          "description_pt": "Descrição do projeto 7.",
+          "description_en": "Description of project 7."
         }
       ]
     },
@@ -80,8 +96,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 8",
-          "description": "Descrição do projeto 8."
+          "title_pt": "Projeto 8",
+          "title_en": "Project 8",
+          "description_pt": "Descrição do projeto 8.",
+          "description_en": "Description of project 8."
         }
       ]
     },
@@ -90,8 +108,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 9",
-          "description": "Descrição do projeto 9."
+          "title_pt": "Projeto 9",
+          "title_en": "Project 9",
+          "description_pt": "Descrição do projeto 9.",
+          "description_en": "Description of project 9."
         }
       ]
     },
@@ -100,8 +120,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 10",
-          "description": "Descrição do projeto 10."
+          "title_pt": "Projeto 10",
+          "title_en": "Project 10",
+          "description_pt": "Descrição do projeto 10.",
+          "description_en": "Description of project 10."
         }
       ]
     },
@@ -110,8 +132,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 11",
-          "description": "Descrição do projeto 11."
+          "title_pt": "Projeto 11",
+          "title_en": "Project 11",
+          "description_pt": "Descrição do projeto 11.",
+          "description_en": "Description of project 11."
         }
       ]
     },
@@ -120,8 +144,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 12",
-          "description": "Descrição do projeto 12."
+          "title_pt": "Projeto 12",
+          "title_en": "Project 12",
+          "description_pt": "Descrição do projeto 12.",
+          "description_en": "Description of project 12."
         }
       ]
     },
@@ -130,8 +156,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 13",
-          "description": "Descrição do projeto 13."
+          "title_pt": "Projeto 13",
+          "title_en": "Project 13",
+          "description_pt": "Descrição do projeto 13.",
+          "description_en": "Description of project 13."
         }
       ]
     },
@@ -140,8 +168,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 14",
-          "description": "Descrição do projeto 14."
+          "title_pt": "Projeto 14",
+          "title_en": "Project 14",
+          "description_pt": "Descrição do projeto 14.",
+          "description_en": "Description of project 14."
         }
       ]
     },
@@ -150,8 +180,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 15",
-          "description": "Descrição do projeto 15."
+          "title_pt": "Projeto 15",
+          "title_en": "Project 15",
+          "description_pt": "Descrição do projeto 15.",
+          "description_en": "Description of project 15."
         }
       ]
     },
@@ -160,8 +192,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 16",
-          "description": "Descrição do projeto 16."
+          "title_pt": "Projeto 16",
+          "title_en": "Project 16",
+          "description_pt": "Descrição do projeto 16.",
+          "description_en": "Description of project 16."
         }
       ]
     },
@@ -170,8 +204,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 17",
-          "description": "Descrição do projeto 17."
+          "title_pt": "Projeto 17",
+          "title_en": "Project 17",
+          "description_pt": "Descrição do projeto 17.",
+          "description_en": "Description of project 17."
         }
       ]
     },
@@ -180,8 +216,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 18",
-          "description": "Descrição do projeto 18."
+          "title_pt": "Projeto 18",
+          "title_en": "Project 18",
+          "description_pt": "Descrição do projeto 18.",
+          "description_en": "Description of project 18."
         }
       ]
     },
@@ -190,8 +228,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 19",
-          "description": "Descrição do projeto 19."
+          "title_pt": "Projeto 19",
+          "title_en": "Project 19",
+          "description_pt": "Descrição do projeto 19.",
+          "description_en": "Description of project 19."
         }
       ]
     },
@@ -200,8 +240,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 20",
-          "description": "Descrição do projeto 20."
+          "title_pt": "Projeto 20",
+          "title_en": "Project 20",
+          "description_pt": "Descrição do projeto 20.",
+          "description_en": "Description of project 20."
         }
       ]
     },
@@ -210,8 +252,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 21",
-          "description": "Descrição do projeto 21."
+          "title_pt": "Projeto 21",
+          "title_en": "Project 21",
+          "description_pt": "Descrição do projeto 21.",
+          "description_en": "Description of project 21."
         }
       ]
     },
@@ -220,8 +264,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 22",
-          "description": "Descrição do projeto 22."
+          "title_pt": "Projeto 22",
+          "title_en": "Project 22",
+          "description_pt": "Descrição do projeto 22.",
+          "description_en": "Description of project 22."
         }
       ]
     },
@@ -230,8 +276,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 23",
-          "description": "Descrição do projeto 23."
+          "title_pt": "Projeto 23",
+          "title_en": "Project 23",
+          "description_pt": "Descrição do projeto 23.",
+          "description_en": "Description of project 23."
         }
       ]
     },
@@ -240,8 +288,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 24",
-          "description": "Descrição do projeto 24."
+          "title_pt": "Projeto 24",
+          "title_en": "Project 24",
+          "description_pt": "Descrição do projeto 24.",
+          "description_en": "Description of project 24."
         }
       ]
     },
@@ -250,8 +300,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 25",
-          "description": "Descrição do projeto 25."
+          "title_pt": "Projeto 25",
+          "title_en": "Project 25",
+          "description_pt": "Descrição do projeto 25.",
+          "description_en": "Description of project 25."
         }
       ]
     },
@@ -260,8 +312,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 26",
-          "description": "Descrição do projeto 26."
+          "title_pt": "Projeto 26",
+          "title_en": "Project 26",
+          "description_pt": "Descrição do projeto 26.",
+          "description_en": "Description of project 26."
         }
       ]
     },
@@ -270,8 +324,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 27",
-          "description": "Descrição do projeto 27."
+          "title_pt": "Projeto 27",
+          "title_en": "Project 27",
+          "description_pt": "Descrição do projeto 27.",
+          "description_en": "Description of project 27."
         }
       ]
     },
@@ -280,8 +336,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 28",
-          "description": "Descrição do projeto 28."
+          "title_pt": "Projeto 28",
+          "title_en": "Project 28",
+          "description_pt": "Descrição do projeto 28.",
+          "description_en": "Description of project 28."
         }
       ]
     },
@@ -290,8 +348,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 29",
-          "description": "Descrição do projeto 29."
+          "title_pt": "Projeto 29",
+          "title_en": "Project 29",
+          "description_pt": "Descrição do projeto 29.",
+          "description_en": "Description of project 29."
         }
       ]
     },
@@ -300,8 +360,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 30",
-          "description": "Descrição do projeto 30."
+          "title_pt": "Projeto 30",
+          "title_en": "Project 30",
+          "description_pt": "Descrição do projeto 30.",
+          "description_en": "Description of project 30."
         }
       ]
     },
@@ -310,8 +372,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 31",
-          "description": "Descrição do projeto 31."
+          "title_pt": "Projeto 31",
+          "title_en": "Project 31",
+          "description_pt": "Descrição do projeto 31.",
+          "description_en": "Description of project 31."
         }
       ]
     },
@@ -320,8 +384,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 32",
-          "description": "Descrição do projeto 32."
+          "title_pt": "Projeto 32",
+          "title_en": "Project 32",
+          "description_pt": "Descrição do projeto 32.",
+          "description_en": "Description of project 32."
         }
       ]
     },
@@ -330,8 +396,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 33",
-          "description": "Descrição do projeto 33."
+          "title_pt": "Projeto 33",
+          "title_en": "Project 33",
+          "description_pt": "Descrição do projeto 33.",
+          "description_en": "Description of project 33."
         }
       ]
     },
@@ -340,8 +408,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 34",
-          "description": "Descrição do projeto 34."
+          "title_pt": "Projeto 34",
+          "title_en": "Project 34",
+          "description_pt": "Descrição do projeto 34.",
+          "description_en": "Description of project 34."
         }
       ]
     },
@@ -350,8 +420,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 35",
-          "description": "Descrição do projeto 35."
+          "title_pt": "Projeto 35",
+          "title_en": "Project 35",
+          "description_pt": "Descrição do projeto 35.",
+          "description_en": "Description of project 35."
         }
       ]
     },
@@ -360,8 +432,10 @@
       "images": [
         {
           "src": "assets/p2.jpg",
-          "title": "Projeto 36",
-          "description": "Descrição do projeto 36."
+          "title_pt": "Projeto 36",
+          "title_en": "Project 36",
+          "description_pt": "Descrição do projeto 36.",
+          "description_en": "Description of project 36."
         }
       ]
     }

@@ -229,3 +229,4 @@ document.addEventListener('DOMContentLoaded', () => {
     rightArrow.addEventListener('click', nextServiceSlide);
   }
 });
+

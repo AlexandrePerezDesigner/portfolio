@@ -1,23 +1,23 @@
 let currentImageIndex = 0;
 let currentProject = null;
+let projects = [];
 
-// Função para carregar os dados do JSON
+// Carregar os dados do JSON
 function loadProjectsJSON() {
     fetch('projects.json') // Nome do arquivo JSON
         .then(response => response.json())
         .then(data => {
-            // Definir os dados dos projetos
-            window.projects = data.projects;
+            projects = data.projects;
         })
         .catch(error => console.error("Erro ao carregar o JSON:", error));
 }
 
-// Chamar a função para carregar o JSON quando a página for carregada
+// Carregar o JSON quando a página for carregada
 document.addEventListener("DOMContentLoaded", loadProjectsJSON);
+
 
 // Função para abrir o popup
 function openPopup(projectId) {
-    // Encontre o projeto pelo ID
     currentProject = projects.find(p => p.id === projectId);
     if (!currentProject) return;
 
@@ -30,7 +30,7 @@ function openPopup(projectId) {
     const popup = document.getElementById('popup');
     popup.classList.add('show');
 
-    // Configurar navegação
+    // Configurar a navegação
     const navigation = document.querySelector('.navigation');
     if (currentProject.images.length > 1) {
         navigation.style.display = 'flex';
@@ -45,14 +45,50 @@ function updatePopupContent(image) {
     const popupTitle = document.getElementById('popupTitle');
     const popupDescription = document.getElementById('popupDescription');
 
-    // Atualizar os elementos do popup com a imagem atual
+    // Verificar o idioma selecionado
+    const language = document.documentElement.lang || 'en';
+
+    // Atualizar os elementos do popup com a imagem e descrição no idioma correto
     popupImage.src = image.src;
     popupTitle.textContent = image.title;
-    popupDescription.textContent = image.description;
+
+    if (language === 'en') {
+        popupDescription.textContent = image.description_en || image.description_pt;
+    } else {
+        popupDescription.textContent = image.description_pt || image.description_en;
+    }
+
+    if (language === 'en') {
+        popupTitle.textContent = image.title_en || image.title_pt;
+    } else {
+        popupTitle.textContent = image.title_pt || image.title_en;
+    }
 
     // Adicionar evento de clique para expandir a imagem
     popupImage.onclick = openExpandedPopup;
 }
+
+// Função para alternar o idioma da página
+function toggleLanguage(language) {
+    const htmlTag = document.documentElement;
+    htmlTag.lang = language;
+
+    // Atualizar os textos da página principal
+    const elements = document.querySelectorAll("[data-en], [data-pt]");
+    elements.forEach((el) => {
+        el.textContent = el.getAttribute(`data-${language}`);
+    });
+
+    // Atualizar o conteúdo do popup, se estiver aberto
+    if (currentProject) {
+        updatePopupContent(currentProject.images[currentImageIndex]);
+    }
+}
+
+// Atualize os botões de alternância de idioma para chamar a função corretamente
+document.getElementById('toggleLanguagePt').addEventListener('click', () => toggleLanguage('pt'));
+document.getElementById('toggleLanguageEn').addEventListener('click', () => toggleLanguage('en'));
+
 
 // Funções de navegação para próxima e anterior imagem
 function prevImage() {
@@ -89,17 +125,17 @@ function closeExpandedPopup() {
     expandedPopup.classList.remove('show');
 }
 
+// Adicionar listener ao botão de alternância de idioma
+document.getElementById('toggleLanguage').addEventListener('click', toggleLanguage);
+
 // Função para alternar entre as seções do portfólio
 function showSection(sectionId) {
-    // Obter a seção atualmente visível
     const currentSection = document.querySelector('.portfolio.show');
     if (currentSection) {
-        // Ocultar a seção atual com transição de opacidade
         currentSection.style.transition = 'opacity 0.5s ease';
         currentSection.style.opacity = 0;
         setTimeout(() => {
             currentSection.classList.remove('show');
-            // Mostrar a nova seção após a anterior ser ocultada
             const selectedPortfolio = document.getElementById(sectionId);
             selectedPortfolio.style.opacity = 0;
             selectedPortfolio.classList.add('show');
@@ -109,7 +145,6 @@ function showSection(sectionId) {
             }, 10);
         }, 500);
     } else {
-        // Se não houver seção atual, apenas mostrar a nova seção
         const selectedPortfolio = document.getElementById(sectionId);
         selectedPortfolio.style.opacity = 0;
         selectedPortfolio.classList.add('show');
@@ -119,7 +154,6 @@ function showSection(sectionId) {
         }, 10);
     }
 
-    // Atualizar o estilo das abas
     document.querySelectorAll('.tabs button').forEach(button => {
         button.classList.remove('active');
     });
