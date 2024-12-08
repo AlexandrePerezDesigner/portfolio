@@ -29,6 +29,9 @@ function openPopup(projectId) {
     const popup = document.getElementById('popup');
     popup.classList.add('show');
 
+    // Impedir o scroll da página atrás do popup
+    document.body.classList.add('no-scroll');
+
     // Configurar a navegação
     const navigation = document.querySelector('.navigation');
     if (currentProject.images.length > 1) {
@@ -37,6 +40,15 @@ function openPopup(projectId) {
         navigation.style.display = 'none';
     }
 }
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.classList.remove('show');
+
+    // Restaurar o scroll da página atrás do popup
+    document.body.classList.remove('no-scroll');
+}
+
 
 // Atualizar o conteúdo do popup
 function updatePopupContent(image) {
@@ -102,6 +114,9 @@ function nextImage() {
 function closePopup() {
     const popup = document.getElementById('popup');
     popup.classList.remove('show');
+
+    // Restaurar o scroll da página atrás do popup
+    document.body.style.overflow = '';
 }
 
 // Função para abrir o popup expandido
@@ -152,3 +167,13 @@ function showSection(sectionId) {
     });
     document.getElementById(sectionId + 'Tab').classList.add('active');
 }
+
+// Função para as thumbs clicáveis
+document.querySelectorAll('.thumb').forEach(thumb => {
+    thumb.addEventListener('click', (event) => {
+        event.preventDefault(); // Previne comportamento padrão do clique
+        const projectId = thumb.getAttribute('data-project-id');
+        openPopup(projectId);
+    });
+});
+

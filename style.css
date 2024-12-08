@@ -30,6 +30,70 @@ body {
   overflow-x: hidden; /* Remover scroll lateral */
 }
 
+body.no-scroll {
+    overflow: hidden; /* Impede o scroll */
+}
+
+/*SCROOL PERSONALIZADO*/
+/* Estilo para a barra de rolagem */
+body::-webkit-scrollbar {
+    width: 12px; /* Largura da barra vertical */
+    height: 10px; /* Altura da barra horizontal */
+}
+
+/* Fundo da barra de rolagem */
+body::-webkit-scrollbar-track {
+    background: #ffffff; /* Fundo branco */
+}
+
+/* Cor da barra de rolagem */
+body::-webkit-scrollbar-thumb {
+    background: #d9534f; /* Barra vermelha */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Cor da barra ao passar o mouse */
+body::-webkit-scrollbar-thumb:hover {
+    background: #af4e4e; /* Vermelho mais escuro no hover */
+}
+
+/* Botões de seta da barra de rolagem */
+body::-webkit-scrollbar-button {
+    background: #d9534f; /* Fundo vermelho */
+    height: 16px; /* Altura das setas */
+    width: 16px; /* Largura das setas */
+    border: none; /* Remove bordas */
+    display: flex; /* Garante centralização */
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; /* Branco para o texto das setas */
+    font-size: 10px; /* Tamanho do texto */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Seta para cima */
+body::-webkit-scrollbar-button:decrement {
+    content: '▲'; /* Define a seta para cima */
+}
+
+body::-webkit-scrollbar-button:decrement::after {
+    content: '▲'; /* Adiciona explicitamente o caractere da seta */
+}
+
+/* Seta para baixo */
+body::-webkit-scrollbar-button:increment {
+    content: '▼'; /* Define a seta para baixo */
+}
+
+body::-webkit-scrollbar-button:increment::after {
+    content: '▼'; /* Adiciona explicitamente o caractere da seta */
+}
+
+/* Hover para os botões de seta */
+body::-webkit-scrollbar-button:hover {
+    background: #af4e4e; /* Fundo vermelho mais escuro no hover */
+}
 
 
 
@@ -91,6 +155,31 @@ header.scrolled {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   opacity: 0.9;
 }
+
+header.scrolled nav ul li a {
+    color: #fff; /* Texto branco padrão */
+    transition: color 0.3s ease;
+}
+
+header.scrolled nav ul li a:hover {
+    color: #eaeaea; /* Mantém branco no hover */
+}
+
+header.scrolled nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distância do texto */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Cor branca para a linha */
+    transition: width 0.3s ease;
+}
+
+header.scrolled nav ul li a:hover::after {
+    width: 100%; /* A linha expande no hover */
+}
+
 
 header .logo img {
   width: 150px;
