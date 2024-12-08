@@ -15,7 +15,6 @@ function loadProjectsJSON() {
 // Carregar o JSON quando a página for carregada
 document.addEventListener("DOMContentLoaded", loadProjectsJSON);
 
-
 // Função para abrir o popup
 function openPopup(projectId) {
     currentProject = projects.find(p => p.id === projectId);
@@ -44,24 +43,19 @@ function updatePopupContent(image) {
     const popupImage = document.getElementById('popupImg');
     const popupTitle = document.getElementById('popupTitle');
     const popupDescription = document.getElementById('popupDescription');
+    const progressIndicator = document.getElementById('progressIndicator');
 
     // Verificar o idioma selecionado
     const language = document.documentElement.lang || 'en';
 
     // Atualizar os elementos do popup com a imagem e descrição no idioma correto
     popupImage.src = image.src;
-    popupTitle.textContent = image.title;
+    popupTitle.textContent = language === 'en' ? (image.title_en || image.title_pt) : (image.title_pt || image.title_en);
+    popupDescription.textContent = language === 'en' ? (image.description_en || image.description_pt) : (image.description_pt || image.description_en);
 
-    if (language === 'en') {
-        popupDescription.textContent = image.description_en || image.description_pt;
-    } else {
-        popupDescription.textContent = image.description_pt || image.description_en;
-    }
-
-    if (language === 'en') {
-        popupTitle.textContent = image.title_en || image.title_pt;
-    } else {
-        popupTitle.textContent = image.title_pt || image.title_en;
+    // Atualizar o indicador de progresso
+    if (currentProject && progressIndicator) {
+        progressIndicator.textContent = `${currentImageIndex + 1}/${currentProject.images.length}`;
     }
 
     // Adicionar evento de clique para expandir a imagem
@@ -88,7 +82,6 @@ function toggleLanguage(language) {
 // Atualize os botões de alternância de idioma para chamar a função corretamente
 document.getElementById('toggleLanguagePt').addEventListener('click', () => toggleLanguage('pt'));
 document.getElementById('toggleLanguageEn').addEventListener('click', () => toggleLanguage('en'));
-
 
 // Funções de navegação para próxima e anterior imagem
 function prevImage() {
