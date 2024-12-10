@@ -59,7 +59,24 @@
 }
 
 .tabs button.active {
-    color: #b04a46; /* Cor diferenciada para o botão ativo */
+    color: #fff; /* Cor diferenciada para o botão ativo */
+      background-color: #dc625c;
+    border-radius: 10px;
+}
+
+.tabs button::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Linha abaixo do texto */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #af4e4e;
+  transition: width 0.3s ease;
+}
+
+.tabs button:hover::after {
+  width: 100%; /* Linha se expande no hover */
 }
 
 @media (max-width: 768px) {

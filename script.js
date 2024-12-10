@@ -230,3 +230,55 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll("header nav ul li a");
+  const sections = document.querySelectorAll("section"); // Todas as seções com id no HTML
+  const logoLink = document.querySelector("header .logo a");
+
+  // Função para remover a classe 'active' de todos os links
+  function removeActiveClass() {
+    navLinks.forEach(nav => nav.classList.remove("active"));
+  }
+
+  // Função para atualizar o menu com base na posição da página
+  function updateActiveMenu() {
+    let currentSection = ""; // Guarda a seção atual visível
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute("id"); // Captura o id da seção visível
+      }
+    });
+
+    // Atualiza o menu com a seção atual
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(currentSection)) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  // Evento de clique nos links do menu
+  navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+      removeActiveClass(); // Remove a classe 'active' de todos os links
+      this.classList.add("active"); // Adiciona ao link clicado
+    });
+  });
+
+  // Evento de clique no logo
+  logoLink.addEventListener("click", function () {
+    removeActiveClass(); // Remove a classe 'active' de todos os links
+  });
+
+  // Evento de scroll para atualizar o menu
+  window.addEventListener("scroll", updateActiveMenu);
+});
+
+
+
+

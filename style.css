@@ -145,39 +145,58 @@ header nav ul li a {
   font-weight: bold;
 }
 
+header nav ul li a.active {
+  padding: 5px 10px;
+  background-color: #af4e4e;
+  border-radius: 10px;
+}
+
 /* Mobile Nav */
 .mobile-nav {
   display: none;
 }
 
+/* Header no estado scrolled */
 header.scrolled {
-  background-color: #dc625c;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  opacity: 0.9;
+    background-color: #dc625c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Suaviza transições no estado scrolled */
 }
 
+/* Links no estado scrolled */
 header.scrolled nav ul li a {
     color: #fff; /* Texto branco padrão */
-    transition: color 0.3s ease;
+    font-size: 16px; /* Tamanho da fonte inicial */
 }
 
+/* Hover nos links no estado scrolled */
 header.scrolled nav ul li a:hover {
-    color: #eaeaea; /* Mantém branco no hover */
+    color: #eaeaea; /* Texto branco mais claro no hover */
 }
 
+/* Linha animada no hover */
 header.scrolled nav ul li a::after {
-    content: '';
+    content: ''; /* Cria o elemento visual */
     position: absolute;
     bottom: -5px; /* Distância do texto */
-    left: 0;
+    left: 50%; /* Centraliza no início */
     width: 0;
     height: 2px;
-    background-color: #fff; /* Cor branca para a linha */
-    transition: width 0.3s ease;
+    background-color: #fff; /* Cor branca para o estado scrolled */
+    transform: translateX(-50%); /* Garante que a linha comece no centro */
+    transition: width 0.3s ease, transform 0.3s ease;
 }
 
+/* Expansão da linha no hover */
 header.scrolled nav ul li a:hover::after {
-    width: 100%; /* A linha expande no hover */
+    width: 100%; /* Expande para preencher a largura total */
+    transform: translateX(-50%); /* Mantém a linha centralizada */
+}
+
+/* Font-size maior no estado scrolled */
+header.scrolled nav ul li a {
+    font-size: 18px; /* Define o novo tamanho da fonte */
 }
 
 
@@ -185,6 +204,13 @@ header .logo img {
   width: 150px;
   transition: all 0.5s ease;
 }
+
+header .logo:hover {
+    transform: scale(1.1); /* Aumenta levemente o logo */
+    filter: brightness(1.2); /* Aumenta o brilho */
+    transition: transform 0.5s ease;
+}
+
 
 header.scrolled .logo img {
   content: url("assets/logo2.png");
@@ -301,7 +327,15 @@ header.scrolled nav ul li a {
    HERO SECTION
 ================================================ */
   .hero {
+    margin-top: -40px;
     height: auto; /* Remove o height fixo no mobile */
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc625c;
+  color: #fff;
+  text-align: center;
+  /*height: 240px; /* Aplicado no desktop */
   }
 }
 
@@ -337,7 +371,7 @@ header.scrolled nav ul li a {
 
 @media (max-width: 768px) {
 .hero .intro-text h1 {
-  margin-top: -50px;
+  margin-top: -60px;
   font-size: 2rem;
   text-align: left;
 }
@@ -454,7 +488,7 @@ header.scrolled nav ul li a {
   color: #f9f9f9;
   text-decoration: none;
   border: 2px solid #dc625c;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: bold;
   position: relative;
@@ -619,20 +653,35 @@ header.scrolled nav ul li a {
   transition: all 0.3s ease;
 }
 
-.desktop-nav a:hover {
-  color: #af4e4e; /* Cor do texto ao passar o mouse */
+/* Links do header */
+header nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #333; /* Cor do texto */
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
 }
 
-.desktop-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px; /* Distância do texto */
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #af4e4e;
-  transition: width 0.3s ease;
+/* Linha animada no hover */
+header nav ul li a::after {
+    content: ''; /* Cria o elemento visual */
+    position: absolute;
+    left: 50%; /* Começa no meio do texto */
+    bottom: -2px; /* Alinha a linha logo abaixo do texto */
+    width: 0; /* Largura inicial da linha */
+    height: 2px; /* Altura da linha */
+    background-color: #d9534f; /* Cor da linha */
+    transform: translateX(-50%); /* Garante que a linha começa no centro */
+    transition: width 0.3s ease, transform 0.3s ease; /* Suaviza a animação */
 }
+
+/* Expansão da linha no hover */
+header nav ul li a:hover::after {
+    width: 100%; /* Expande para preencher a largura total */
+    transform: translateX(-50%); /* Mantém a linha centralizada */
+}
+
 
 .desktop-nav a:hover::after {
   width: 100%; /* Animação para preencher a largura */
