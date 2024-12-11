@@ -1127,19 +1127,289 @@ header {
     }
 }
 
-/*#portfolio {
-  overflow-x: hidden; /* Remover scroll lateral
-}*/
+/*SOBRE ABOUT */
 
-#highlights {
-  background-color: #e0e0e0;
+.about-section {
+  background-color: #f9f9f9; /* Cor de fundo suave */
+  /*padding: 4rem 2rem; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
 }
 
-#about {
-  background-color: #d0d0d0;
+.about-section h2 {
+  padding-top: 2em;
+  font-size: 1.5rem; /* Tamanho do título */
+  font-weight: bold; /* Deixa o título em negrito */
+  color: #555; /* Cor do texto */
+  transition: all 0.3s ease; /* Suaviza transições */
 }
 
-#contact {
-  background-color: #c0c0c0;
+.about-section-h3 {
+  text-align: left;
+  font-size: 1.5rem; /* Tamanho do título */
+  font-weight: bold; /* Deixa o título em negrito */
+  color: #fff; /* Cor do texto */
+  transition: all 0.3s ease; /* Suaviza transições */
 }
 
+.about-section p {
+  padding-bottom: 1.0em;
+  font-size: 0.9rem; /* Tamanho do texto */
+ /* line-height: 1.8; /* Altura da linha para melhor leitura */
+  color: #555; /* Cor do texto */
+  max-width: 800px; /* Largura máxima do parágrafo */
+  margin: 0 auto; /* Centraliza o texto */
+  transition: all 0.3s ease; /* Suaviza transições */
+}
+
+/* Estilo responsivo para telas menores */
+@media (max-width: 768px) {
+  .about-section {
+    /*padding: 2rem 1rem; /* Reduz o espaçamento interno */
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem; /* Reduz o tamanho do título */
+  }
+
+  .about-section p {
+    font-size: 1rem; /* Reduz o tamanho do texto */
+  }
+}
+
+/*SLIDER PAGINA SOBRE*/
+
+.about-slider {
+  height: 300px;
+    position: relative;
+    background-color: #dc625c;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   /* min-height: 400px; /* Define uma altura mínima para uniformizar */
+}
+
+.about-slide {
+    margin-left: 12%;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%; /* Força todos os slides a terem a mesma altura */
+    box-sizing: border-box; /* Inclui padding e border na altura */
+
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s ease; /* Transição suave */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Mantém o slide atrás */
+
+}
+
+.about-slide.active {
+    display: flex;
+
+    opacity: 1; /* Torna o slide visível */
+    z-index: 1; /* Traz o slide para frente */
+
+}
+
+/* Slide anterior (indo para fora à esquerda) */
+.about-slide.previous {
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 1; /* Mover para trás */
+}
+
+/* Slide próximo (vindo da direita) */
+.about-slide.next {
+    opacity: 0;
+    transform: translateX(100%);
+    z-index: 1; /* Mover para trás */
+}
+
+.about-slide img {
+    width: 150px;
+    height: auto;
+    flex-shrink: 0; /* Garante que a imagem não deforme */
+}
+
+.slide-content {
+    flex: 1; /* Faz com que o conteúdo ocupe o espaço restante */
+    margin-left: 10px;
+}
+
+.slide-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.slide-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slide-content ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.0; /* Uniformiza o espaçamento entre linhas */
+    text-align: left;
+}
+
+/* Navigation */
+.slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slider-nav .ant,
+.slider-nav .prox {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.slider-nav .dots {
+    display: flex;
+    gap: 10px;
+    margin: 0 20px;
+}
+
+.slider-nav .dots span {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-nav .dots span.active {
+    background: #e74c3c;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 2px;
+}
+
+/* Efeito de hover nos bullets */
+.slider-nav .dots span {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+.slider-nav .dots span:hover {
+    background: #e74c3c; /* Muda a cor ao passar o mouse */
+    transform: scale(1.2); /* Aumenta o tamanho levemente */
+}
+
+/* Efeito de hover nas setas */
+.slider-nav .ant,
+.slider-nav .prox {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+.slider-nav .ant:hover,
+.slider-nav .prox:hover {
+    color: #fff; /* Muda a cor ao passar o mouse */
+    transform: scale(1.3); /* Aumenta o tamanho levemente */
+}
+
+.about-slide ul li span b {
+    font-weight: bold; /* Garante o estilo de negrito */
+    margin-right: 5px; /* Adiciona um pequeno espaço após o texto em negrito */
+}
+
+.about-slide ul li span {
+    display: inline; /* Garante que o texto esteja alinhado horizontalmente */
+}
+
+.subt-about {
+  font-weight: bold;
+}
+
+
+/*CURRICULUM*/
+
+.curriculum-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.curriculum-content {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #dc625c;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #af4e4e;
+}
+
+/*MOBILE ABOUT*/
+
+@media (max-width: 768px) {
+    .about-slide {
+        flex-direction: column; /* Alinha os elementos verticalmente */
+        align-items: center;   /* Centraliza os elementos */
+        text-align: center;    /* Centraliza o texto */
+        margin-left: 0;        /* Remove o deslocamento lateral */
+    }
+
+    .about-slide img {
+        /*margin-bottom: 20px;  /* Adiciona espaço entre o ícone e o conteúdo */
+        max-width: 80px;      /* Ajusta o tamanho do ícone */
+        height: auto;         /* Mantém proporção */
+    }
+
+    .slide-content {
+        max-width: 90%;       /* Ajusta a largura do conteúdo */
+    }
+
+    .slide-content h3,
+    .slide-content ul {
+        text-align: center;   /* Centraliza os textos */
+    }
+
+    .about-section-h3 {
+      font-size: 1.0em;
+    }
+
+    .about-slide ul li span{
+      font-size: 14px;
+    }
+
+    .about-slider{
+      height: auto;
+    }
+}

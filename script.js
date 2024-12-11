@@ -280,5 +280,57 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//SLIDER PAGINA SOBRE
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".about-slide");
+    const dotsContainer = document.querySelector(".slider-nav .dots");
+    const prevButton = document.querySelector(".ant");
+    const nextButton = document.querySelector(".prox");
+    let currentSlide = 0;
+
+    // Criar os dots dinamicamente
+    slides.forEach((_, i) => {
+        const dot = document.createElement("span");
+        dot.dataset.index = i;
+        if (i === 0) dot.classList.add("active");
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll("span");
+
+    // Função para atualizar o slider
+    function updateSlider(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+        });
+        currentSlide = index;
+    }
+
+    // Eventos para os dots
+    dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+            const index = parseInt(dot.dataset.index, 10);
+            if (index !== currentSlide) updateSlider(index);
+        });
+    });
+
+    // Eventos para as setas
+    prevButton.addEventListener("click", () => {
+        const newSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlider(newSlide);
+    });
+
+    nextButton.addEventListener("click", () => {
+        const newSlide = (currentSlide + 1) % slides.length;
+        updateSlider(newSlide);
+    });
+
+    // Inicializar o slider
+    updateSlider(currentSlide);
+});
+
 
 
