@@ -453,6 +453,7 @@ header.scrolled nav ul li a {
   opacity: 0; /* Começa invisível */
   transform: translateY(50px); /* Começa abaixo */
   transition: opacity 1s ease-out, transform 1s ease-out; /* Animação suave */
+  margin-bottom: 200px;
 }
 
 
@@ -476,7 +477,7 @@ header.scrolled nav ul li a {
   height: 60px;
   margin-top: 0.5rem;
   font-size: 0.9rem;
-  color: #555;
+  color: #878787;
 }
 
 /* Botões Discover Now */
@@ -755,15 +756,17 @@ header nav ul li a:hover::after {
    RODAPÉ
 ================================================ */
 footer {
-  position: fixed; /* Sempre no rodapé */
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f9f9f9; /* Opcional: pode alterar o fundo */
-  text-align: center;
-  padding: 0.5rem 0;
-  color: #dc625c; /* Cor do texto */
-  font-size: 0.8rem; /* Tamanho reduzido do texto */
+z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: #dc625c;
+    font-size: 0.8rem;
 }
 
 footer p {
@@ -826,17 +829,17 @@ footer .language-switcher {
     text-align: center;
   }
 
-/* Serviços: Estilo para ícones em elipse */
+/* Serviços: Estilo para ícones em elipse 
 .icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px; /* Largura da elipse */
-  height: 80px; /* Altura da elipse */
-  background-color: #dc625c; /* Cor da elipse */
-  border-radius: 50%; /* Forma redonda */
-  margin: 0 auto 1rem; /* Centraliza e adiciona espaçamento inferior */
-}
+  width: 80px; 
+  height: 80px; 
+  background-color: #dc625c; /
+  border-radius: 50%;
+  margin: 0 auto 1rem; 
+}*/
 
 .icon-container img {
   width: 40px; /* Tamanho do ícone */
@@ -992,7 +995,7 @@ footer .language-switcher {
 }
 
 .service p {
-  color: #555;
+  color: #878787;
   font-size: 1rem;
   line-height: 1.5rem; /* Aumenta a altura da linha para legibilidade */
   text-align: center;
@@ -1133,13 +1136,14 @@ header {
   background-color: #f9f9f9; /* Cor de fundo suave */
   /*padding: 4rem 2rem; /* Espaçamento interno */
   text-align: center; /* Centraliza o texto */
+  margin-bottom: 200px;
 }
 
 .about-section h2 {
   padding-top: 2em;
   font-size: 1.5rem; /* Tamanho do título */
   font-weight: bold; /* Deixa o título em negrito */
-  color: #555; /* Cor do texto */
+  color: #878787; /* Cor do texto */
   transition: all 0.3s ease; /* Suaviza transições */
 }
 
@@ -1155,7 +1159,7 @@ header {
   padding-bottom: 1.0em;
   font-size: 0.9rem; /* Tamanho do texto */
  /* line-height: 1.8; /* Altura da linha para melhor leitura */
-  color: #555; /* Cor do texto */
+  color: #878787; /* Cor do texto */
   max-width: 800px; /* Largura máxima do parágrafo */
   margin: 0 auto; /* Centraliza o texto */
   transition: all 0.3s ease; /* Suaviza transições */
@@ -1169,17 +1173,23 @@ header {
 
   .about-section h2 {
     font-size: 1.5rem; /* Reduz o tamanho do título */
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .about-section p {
     font-size: 1rem; /* Reduz o tamanho do texto */
+  }
+  .about-section p {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
 /*SLIDER PAGINA SOBRE*/
 
 .about-slider {
-  height: 300px;
+    height: 300px;
     position: relative;
     background-color: #dc625c;
     padding: 20px;
@@ -1187,6 +1197,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
    /* min-height: 400px; /* Define uma altura mínima para uniformizar */
 }
 
@@ -1353,7 +1364,7 @@ header {
 
 .curriculum-section {
     text-align: center;
-    margin: 30px 0;
+    /*margin: 30px 0;*/
 }
 
 .curriculum-content {
@@ -1370,6 +1381,12 @@ header {
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .download-btn {
+    margin-bottom: 340px;
+  }
 }
 
 .download-btn:hover {
@@ -1411,5 +1428,163 @@ header {
 
     .about-slider{
       height: auto;
+    }
+}
+
+
+/* CONTATO */
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+    /*width: 70%;*/
+    max-width: 1200px;
+    margin-bottom: 200px;
+}
+
+.left, .right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tit-contato h1 {
+    text-transform: uppercase; /* Transforma o texto em caixa alta */
+    line-height: 35px;
+    color: #dc625c;
+    font-size: 1.6rem;
+}
+
+.tit-contato p {
+  font-size: 20px;
+    color: #878787;
+    line-height: 26px;
+}
+
+@media (max-width: 768px) {
+  .tit-contato, .txt-contato, .info {
+    /*margin-left: 20px;*/
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.txt-contato{
+   font-size: 14px;
+    color: #878787;
+        margin: 5px 0;
+    line-height: 1.5; /* Espaçamento entre as linhas */
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-ellipse {
+    width: 50px;
+    height: 50px;
+    background-color: #dc625c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-ellipse img {
+    width: 24px;
+    height: 24px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+   /* gap: 10px;*/
+    width: 100%;
+}
+
+form label {
+    font-size: 1rem; /* Tamanho da fonte do rótulo */
+    color: #878787; /* Cor do texto */
+    display: block; /* Garante que o rótulo fique acima do campo */
+}
+
+form input, form textarea, form button {
+    width: 340px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #dc625c;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+form button {
+    background-color: #dc625c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #af4e4e;
+}
+
+#feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #dc625c;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    text-align: center;
+}
+
+#feedback p {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .right{
+      margin-bottom: 340px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
 }

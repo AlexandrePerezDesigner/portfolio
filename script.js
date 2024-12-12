@@ -334,3 +334,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// CONTATO
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const feedback = document.getElementById("feedback");
+    const closeFeedback = document.getElementById("close-feedback");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch("https://formsubmit.co/ajax/alexandreperezdesign@gmail.com", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: formData.get("name"),
+                email: formData.get("email"),
+                phone: formData.get("phone"),
+                message: formData.get("message"),
+            }),
+        })
+            .then((response) => response.json())
+            .then(() => {
+                feedback.classList.remove("hidden");
+            })
+            .catch(() => alert("Ocorreu um erro ao enviar a mensagem!"));
+    });
+
+    closeFeedback.addEventListener("click", function () {
+        feedback.classList.add("hidden");
+        form.reset();
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const phoneInput = document.getElementById("phone");
+
+    phoneInput.addEventListener("input", function (event) {
+        let value = phoneInput.value.replace(/\D/g, ""); // Remove todos os caracteres que não são números
+
+        if (value.length > 11) value = value.slice(0, 11); // Limita o número a 11 dígitos
+
+        // Aplica a máscara
+        if (value.length <= 10) {
+            // Formato para números com 10 dígitos (sem 9 na frente, ex.: fixos antigos)
+            value = value.replace(/^(\d{2})(\d{4})(\d+)/, "($1) $2-$3");
+        } else {
+            // Formato para números com 11 dígitos (celulares)
+            value = value.replace(/^(\d{2})(\d{5})(\d+)/, "($1) $2.$3");
+        }
+
+        phoneInput.value = value; // Atualiza o valor do campo
+    });
+});
