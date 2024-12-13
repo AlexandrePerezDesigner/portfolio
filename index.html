@@ -148,27 +148,27 @@
     </div>
 
     <div id="web" class="portfolio show">
-      <div class="thumb project-with-multiple-images" onclick="openPopup(1)">
+      <div class="thumb project-with-multiple-images" data-project-id="1" onclick="openPopup(1)">
         <img src="portfolio/00-th-sbt.jpg" alt="Net Combo">
         <span class="thumb-title">+SBT</span>
       </div>  
-      <div class="thumb project-with-multiple-images" onclick="openPopup(2)">
+      <div class="thumb project-with-multiple-images" data-project-id="2" onclick="openPopup(2)">
         <img src="portfolio/01-th-net.jpg" alt="Net Combo">
         <span class="thumb-title">Net Combo</span>
       </div>
-      <div class="thumb" onclick="openPopup(3)">
+      <div class="thumb" data-project-id="3" onclick="openPopup(3)">
         <img src="portfolio/02-th-claro.jpg" alt="Claro Empresas">
         <span class="thumb-title">Claro Empresas</span>
       </div>
-      <div class="thumb" onclick="openPopup(4)">
+      <div class="thumb" data-project-id="4" onclick="openPopup(4)">
         <img src="portfolio/03-th-tim.jpg" alt="Tim Empresas">
         <span class="thumb-title">Tim Empresas</span>
       </div>
-      <div class="thumb" onclick="openPopup(5)">
+      <div class="thumb" data-project-id="5" onclick="openPopup(5)">
         <img src="portfolio/04-th-caoa.jpg" alt="Caoa Consórcios">
         <span class="thumb-title">Caoa Consórcios</span>
       </div>
-      <div class="thumb" onclick="openPopup(6)">
+      <div class="thumb" data-project-id="6" onclick="openPopup(6)">
         <img src="portfolio/05-th-lopes.jpg" alt="Thumb 5">
         <span class="thumb-title">Lopes</span>
       </div>
@@ -222,8 +222,9 @@
 <div id="popup" class="popup">
     <div class="popup-content">
         <span class="close" onclick="closePopup()">&times;</span>
-        <div class="popup-image">
+        <div class="popup-media">
             <img id="popupImg" src="" alt="">
+            <video id="popupVideo" style="display: none;" controls autoplay loop></video>
         </div>
         <div class="navigation">
             <span class="prev" onclick="prevImage()">&#10094;</span>
@@ -238,12 +239,15 @@
 </div>
 
 
-    <div id="expandedPopup" class="expanded-popup">
-      <span class="expanded-close" onclick="closeExpandedPopup()">&times;</span>
-      <img id="expandedImg" src="" alt="Imagem Expandida">
-    </div>
+<div id="expandedPopup" class="expanded-popup">
+    <span class="expanded-close" onclick="closeExpandedPopup()">&times;</span>
+    <img id="expandedImg" src="" alt="Imagem Expandida">
+</div>
+
+
   </section>
 </div>
+
 
   <!-- Highlights Page -->
   <section id="highlights" class="scroll-section">

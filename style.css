@@ -231,15 +231,26 @@ header nav ul li a {
   transition: color 0.5s ease;
 }
 
-header.scrolled nav ul li a {
-  color: #fff;
+header.scrolled {
+  color: #ffffff;
 }
+
+
 
 
 /* ================================================
    MENU MOBILE
 ================================================ */
 .hamburger {
+  color: #dc625c;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger.scrolled nav ul li a {
+  color: #ffffff;
   font-size: 1.5rem;
   background: none;
   border: none;

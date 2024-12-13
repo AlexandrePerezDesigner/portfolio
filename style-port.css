@@ -179,6 +179,15 @@
         align-items: center;
     }
 
+        .popup-media {
+        position: relative;
+        width: 100%;
+        /*max-height: 800px;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .popup-text {
        /* font-size: 10px;
         text-align: center;
@@ -332,7 +341,28 @@
     z-index: 1000;
 }
 
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1000;
+}
+
 .popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#popup.show {
     opacity: 1;
     visibility: visible;
 }
@@ -358,6 +388,14 @@
     position: relative;
 }
 
+.popup-media {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 .popup-image img {
     max-width: 100%;
     max-height: 100%;
@@ -365,6 +403,15 @@
     cursor: pointer;
     transition: transform 0.5s ease;
 }
+
+.popup-media img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
 
 .navigation {
     margin-left: 18%;
@@ -510,12 +557,61 @@
     color: #ffffff;
 }
 
+/* Estilo para o popup expandido */
+#expandedPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+}
+
+/* Mostrar o popup expandido quando ativo */
+#expandedPopup.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilo da imagem expandida */
+#expandedImg {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Botão para fechar o popup expandido */
+.expanded-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
 .popup-text {
     margin-top: 30px;
     padding-left: 10px;
     padding-right: 100px;
     flex: 1;
     color: #333;
+}
+
+.popup-media img, .popup-media video {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    object-fit: contain;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {

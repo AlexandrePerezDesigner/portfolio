@@ -8,6 +8,7 @@ function loadProjectsJSON() {
         .then(response => response.json())
         .then(data => {
             projects = data.projects;
+            console.log("Projetos carregados:", projects);
         })
         .catch(error => console.error("Erro ao carregar o JSON:", error));
 }
@@ -17,12 +18,20 @@ document.addEventListener("DOMContentLoaded", loadProjectsJSON);
 
 // Função para abrir o popup
 function openPopup(projectId) {
-    currentProject = projects.find(p => p.id === projectId);
-    if (!currentProject) return;
+    if (!projectId) {
+        console.error(`ID inválido: ${projectId}`);
+        return;
+    }
+
+    currentProject = projects.find(p => p.id === parseInt(projectId));
+    if (!currentProject) {
+        console.error(`Projeto com ID ${projectId} não encontrado no JSON.`);
+        return;
+    }
 
     currentImageIndex = 0;
 
-    // Carregar a primeira imagem no popup
+    // Carregar a primeira mídia no popup
     updatePopupContent(currentProject.images[currentImageIndex]);
 
     // Mostrar o popup
@@ -39,6 +48,12 @@ function openPopup(projectId) {
     } else {
         navigation.style.display = 'none';
     }
+
+    // Ajustar posição das setas
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    prevButton.style.top = '50%';
+    nextButton.style.top = '50%';
 }
 
 function closePopup() {
@@ -47,31 +62,59 @@ function closePopup() {
 
     // Restaurar o scroll da página atrás do popup
     document.body.classList.remove('no-scroll');
+
+    // Parar vídeos no fechamento do popup
+    const videoElement = document.querySelector('.popup-media video');
+    if (videoElement) {
+        videoElement.pause();
+        videoElement.currentTime = 0;
+    }
 }
 
-
 // Atualizar o conteúdo do popup
-function updatePopupContent(image) {
-    const popupImage = document.getElementById('popupImg');
+function updatePopupContent(media) {
+    if (!media) {
+        console.error("Mídia não encontrada ou inválida.");
+        return;
+    }
+
+    const popupMediaContainer = document.querySelector('.popup-media');
     const popupTitle = document.getElementById('popupTitle');
     const popupDescription = document.getElementById('popupDescription');
     const progressIndicator = document.getElementById('progressIndicator');
 
-    // Verificar o idioma selecionado
-    const language = document.documentElement.lang || 'en';
+    // Limpar mídia anterior
+    popupMediaContainer.innerHTML = '';
 
-    // Atualizar os elementos do popup com a imagem e descrição no idioma correto
-    popupImage.src = image.src;
-    popupTitle.textContent = language === 'en' ? (image.title_en || image.title_pt) : (image.title_pt || image.title_en);
-    popupDescription.textContent = language === 'en' ? (image.description_en || image.description_pt) : (image.description_pt || image.description_en);
+    // Verificar o tipo de mídia (imagem ou vídeo)
+    if (media.src.endsWith('.mp4')) {
+        const video = document.createElement('video');
+        video.src = media.src;
+        video.controls = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.style.maxWidth = '100%';
+        video.style.maxHeight = '70vh';
+        popupMediaContainer.appendChild(video);
+    } else {
+        const img = document.createElement('img');
+        img.src = media.src;
+        img.style.maxWidth = '100%';
+        img.style.maxHeight = '70vh';
+        img.style.objectFit = 'contain';
+        img.onclick = openExpandedPopup; // Adiciona evento para expandir a imagem
+        popupMediaContainer.appendChild(img);
+    }
+
+    // Atualizar título e descrição
+    const language = document.documentElement.lang || 'en';
+    popupTitle.textContent = language === 'en' ? media.title_en : media.title_pt;
+    popupDescription.textContent = language === 'en' ? media.description_en : media.description_pt;
 
     // Atualizar o indicador de progresso
     if (currentProject && progressIndicator) {
         progressIndicator.textContent = `${currentImageIndex + 1}/${currentProject.images.length}`;
     }
-
-    // Adicionar evento de clique para expandir a imagem
-    popupImage.onclick = openExpandedPopup;
 }
 
 // Função para alternar o idioma da página
@@ -95,8 +138,13 @@ function toggleLanguage(language) {
 document.getElementById('toggleLanguagePt').addEventListener('click', () => toggleLanguage('pt'));
 document.getElementById('toggleLanguageEn').addEventListener('click', () => toggleLanguage('en'));
 
-// Funções de navegação para próxima e anterior imagem
+// Funções de navegação para próxima e anterior mídia
 function prevImage() {
+    if (!currentProject || !currentProject.images) {
+        console.error("Nenhum projeto carregado ou imagens ausentes.");
+        return;
+    }
+
     if (currentImageIndex > 0) {
         currentImageIndex--;
         updatePopupContent(currentProject.images[currentImageIndex]);
@@ -104,26 +152,36 @@ function prevImage() {
 }
 
 function nextImage() {
+    if (!currentProject || !currentProject.images) {
+        console.error("Nenhum projeto carregado ou imagens ausentes.");
+        return;
+    }
+
     if (currentImageIndex < currentProject.images.length - 1) {
         currentImageIndex++;
         updatePopupContent(currentProject.images[currentImageIndex]);
     }
 }
 
-// Função para fechar o popup
-function closePopup() {
-    const popup = document.getElementById('popup');
-    popup.classList.remove('show');
-
-    // Restaurar o scroll da página atrás do popup
-    document.body.style.overflow = '';
-}
-
 // Função para abrir o popup expandido
 function openExpandedPopup() {
     const expandedPopup = document.getElementById('expandedPopup');
     const expandedImg = document.getElementById('expandedImg');
-    expandedImg.src = currentProject.images[currentImageIndex].src;
+
+    if (!currentProject || !currentProject.images[currentImageIndex]) {
+        console.error("Nenhum projeto ou mídia atual encontrada para expandir.");
+        return;
+    }
+
+    // Verificar se a mídia é uma imagem
+    const currentMedia = currentProject.images[currentImageIndex];
+    if (currentMedia.src.endsWith('.mp4')) {
+        console.warn("A mídia atual é um vídeo e não pode ser expandida.");
+        return;
+    }
+
+    // Definir o src da imagem expandida
+    expandedImg.src = currentMedia.src;
     expandedPopup.classList.add('show');
 }
 
@@ -132,9 +190,6 @@ function closeExpandedPopup() {
     const expandedPopup = document.getElementById('expandedPopup');
     expandedPopup.classList.remove('show');
 }
-
-// Adicionar listener ao botão de alternância de idioma
-document.getElementById('toggleLanguage').addEventListener('click', toggleLanguage);
 
 // Função para alternar entre as seções do portfólio
 function showSection(sectionId) {
@@ -177,3 +232,14 @@ document.querySelectorAll('.thumb').forEach(thumb => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            hamburger.classList.add("scrolled");
+        } else {
+            hamburger.classList.remove("scrolled");
+        }
+    });
+});

@@ -4,8 +4,35 @@
       "id": 1,
       "images": [
         {
+          "src": "portfolio/mais01.jpg",
+          "title_pt": "+SBT Posters",
+          "title_en": "+SBT Posters",
+          "description_pt": "Esta landing page promove o pacote Net Combo, destacando internet, TV por assinatura e telefone fixo. A primeira tela apresenta a oferta de 30 Mega por R$ 59,90 ao mês, com botões Verificar Disponibilidade. Ao clicar, o usuário é levado para uma segunda tela, onde insere seus dados para checar a disponibilidade do serviço. O design é direto, com cores vibrantes e botões estrategicamente posicionados para incentivar a conversão, facilitando o entendimento dos benefícios e a adesão ao serviço.",
+          "description_en": "This landing page promotes the Net Combo package, highlighting internet, TV subscription, and landline services. The first screen presents the 30 Mbps offer for R$ 59.90 per month, with \"Check Availability\" buttons. Upon clicking, users are taken to a second screen where they enter their details to verify service availability. The design is straightforward, with vibrant colors and strategically positioned buttons to encourage conversion, making it easy for users to understand the benefits and subscribe to the service."
+        },
+        {
+          "src": "portfolio/mais02.jpg",
+          "title_pt": "+SBT Posters",
+          "title_en": "+SBT Posters",
+         "description_pt": "Esta landing page promove o pacote Net Combo, destacando internet, TV por assinatura e telefone fixo. A primeira tela apresenta a oferta de 30 Mega por R$ 59,90 ao mês, com botões Verificar Disponibilidade. Ao clicar, o usuário é levado para uma segunda tela, onde insere seus dados para checar a disponibilidade do serviço. O design é direto, com cores vibrantes e botões estrategicamente posicionados para incentivar a conversão, facilitando o entendimento dos benefícios e a adesão ao serviço.",
+          "description_en": "This landing page promotes the Net Combo package, highlighting internet, TV subscription, and landline services. The first screen presents the 30 Mbps offer for R$ 59.90 per month, with \"Check Availability\" buttons. Upon clicking, users are taken to a second screen where they enter their details to verify service availability. The design is straightforward, with vibrant colors and strategically positioned buttons to encourage conversion, making it easy for users to understand the benefits and subscribe to the service."
+        },
+        {
+          "src": "portfolio/mais03.jpg",
+          "title_pt": "+SBT Posters",
+          "title_en": "+SBT Posters",
+          "description_pt": "Descrição do projeto Net Combo - Imagem 2.",
+          "description_en": "Description of the Net Combo project - Image 2."
+        }
+      ]
+    },
+
+    {
+      "id": 2,
+      "images": [
+        {
           "src": "portfolio/01net1.jpg",
-          "title_pt": "Net Combo - Página de Destino",
+          "title_pt": "Net Combo - Landing Page",
           "title_en": "Net Combo - Landing Page",
           "description_pt": "Esta landing page promove o pacote Net Combo, destacando internet, TV por assinatura e telefone fixo. A primeira tela apresenta a oferta de 30 Mega por R$ 59,90 ao mês, com botões Verificar Disponibilidade. Ao clicar, o usuário é levado para uma segunda tela, onde insere seus dados para checar a disponibilidade do serviço. O design é direto, com cores vibrantes e botões estrategicamente posicionados para incentivar a conversão, facilitando o entendimento dos benefícios e a adesão ao serviço.",
           "description_en": "This landing page promotes the Net Combo package, highlighting internet, TV subscription, and landline services. The first screen presents the 30 Mbps offer for R$ 59.90 per month, with \"Check Availability\" buttons. Upon clicking, users are taken to a second screen where they enter their details to verify service availability. The design is straightforward, with vibrant colors and strategically positioned buttons to encourage conversion, making it easy for users to understand the benefits and subscribe to the service."
@@ -14,20 +41,8 @@
           "src": "portfolio/01net2.jpg",
           "title_pt": "Net Combo - Página de Destino",
           "title_en": "Net Combo - Landing Page",
-          "description_pt": "Descrição do projeto Net Combo - Imagem 2.",
-          "description_en": "Description of the Net Combo project - Image 2."
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "images": [
-        {
-          "src": "assets/p2.jpg",
-          "title_pt": "Projeto 2",
-          "title_en": "Project 2",
-          "description_pt": "Descrição do projeto 2.",
-          "description_en": "Description of project 2."
+          "description_pt": "Esta landing page promove o pacote Net Combo, destacando internet, TV por assinatura e telefone fixo. A primeira tela apresenta a oferta de 30 Mega por R$ 59,90 ao mês, com botões Verificar Disponibilidade. Ao clicar, o usuário é levado para uma segunda tela, onde insere seus dados para checar a disponibilidade do serviço. O design é direto, com cores vibrantes e botões estrategicamente posicionados para incentivar a conversão, facilitando o entendimento dos benefícios e a adesão ao serviço.",
+          "description_en": "This landing page promotes the Net Combo package, highlighting internet, TV subscription, and landline services. The first screen presents the 30 Mbps offer for R$ 59.90 per month, with \"Check Availability\" buttons. Upon clicking, users are taken to a second screen where they enter their details to verify service availability. The design is straightforward, with vibrant colors and strategically positioned buttons to encourage conversion, making it easy for users to understand the benefits and subscribe to the service."
         }
       ]
     },
@@ -35,8 +50,8 @@
       "id": 3,
       "images": [
         {
-          "src": "assets/p2.jpg",
-          "title_pt": "Projeto 3",
+          "src": "portfolio/claro.jpg",
+          "title_pt": "Claro",
           "title_en": "Project 3",
           "description_pt": "Descrição do projeto 3.",
           "description_en": "Description of project 3."
@@ -47,7 +62,7 @@
       "id": 4,
       "images": [
         {
-          "src": "assets/p2.jpg",
+          "src": "portfolio/tim.jpg",
           "title_pt": "Projeto 4",
           "title_en": "Project 4",
           "description_pt": "Descrição do projeto 4.",
@@ -59,7 +74,7 @@
       "id": 5,
       "images": [
         {
-          "src": "assets/p2.jpg",
+          "src": "portfolio/caoa.jpg",
           "title_pt": "Projeto 5",
           "title_en": "Project 5",
           "description_pt": "Descrição do projeto 5.",
@@ -71,7 +86,7 @@
       "id": 6,
       "images": [
         {
-          "src": "assets/p2.jpg",
+          "src": "portfolio/rebelde-sbt-videos.mp4",
           "title_pt": "Projeto 6",
           "title_en": "Project 6",
           "description_pt": "Descrição do projeto 6.",
