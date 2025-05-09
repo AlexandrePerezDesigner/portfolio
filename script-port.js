@@ -128,11 +128,23 @@ function toggleLanguage(language) {
         el.textContent = el.getAttribute(`data-${language}`);
     });
 
-    // Atualizar o conteúdo do popup, se estiver aberto
-    if (currentProject) {
-        updatePopupContent(currentProject.images[currentImageIndex]);
+    // Pausar vídeos em execução no popup ou na página
+    const allVideos = document.querySelectorAll("video");
+    allVideos.forEach((video) => {
+        video.pause(); // Pausa o vídeo
+        video.currentTime = 0; // Reseta o vídeo para o início
+    });
+
+    // Fechar qualquer popup aberto para garantir que os vídeos parem
+    const popup = document.getElementById("popup");
+    if (popup && popup.classList.contains("show")) {
+        popup.classList.remove("show");
+        document.body.classList.remove("no-scroll");
     }
 }
+
+
+
 
 // Atualize os botões de alternância de idioma para chamar a função corretamente
 document.getElementById('toggleLanguagePt').addEventListener('click', () => toggleLanguage('pt'));
@@ -243,3 +255,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+function showHighlightSection(sectionId) {
+  const currentSection = document.querySelector('.highlight.show');
+  if (currentSection) {
+    currentSection.classList.remove('show');
+  }
+  const selectedHighlight = document.getElementById(sectionId);
+  if (selectedHighlight) {
+    selectedHighlight.classList.add('show');
+  }
+
+  // Atualiza a aba ativa
+  document.querySelectorAll('.tabs2 button').forEach(button => {
+    button.classList.remove('active2');
+  });
+  document.getElementById(sectionId + 'Tab').classList.add('active2');
+
+
+
+}
+
+

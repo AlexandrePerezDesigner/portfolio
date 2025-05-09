@@ -1,0 +1,670 @@
+/*html{
+    overflow-x: hidden; /* Remover scroll lateral 
+}*/
+
+/*body {
+  overflow-x: hidden; /* Remover scroll lateral 
+}*/
+
+.tabs2 {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px; /* Removido valor negativo para evitar problemas no layout */
+    justify-content: center; /* Centralizar tabs horizontalmente */
+}
+
+@media (max-width: 768px) {
+    .tabs2 {
+        display: flex;
+        gap: 20px;
+        margin-top: -20px; /* Removido valor negativo no mobile também */
+        justify-content: center; /* Centralizar tabs no mobile também */
+    }
+}
+
+.tabs2 button {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #dc625c;
+    font-size: 16px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+}
+
+
+.tabs2 button:hover {
+
+    color: #af4e4e; /* Cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Ampliação suave ao passar o mouse */
+}
+
+.tabs2 button::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; /* Distância do texto */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #af4e4e;
+    transition: width 0.3s ease;
+}
+
+.tabs2 button:hover::after {
+    width: 100%; /* Animação para preencher a largura */
+}
+
+.tabs2 button.active {
+    color: #fff; /* Cor diferenciada para o botão ativo */
+      background-color: #dc625c;
+    border-radius: 40px;
+}
+
+.tabs2 button::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Linha abaixo do texto */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #af4e4e;
+  transition: width 0.3s ease;
+}
+
+.tabs2 button:hover::after {
+  width: 100%; /* Linha se expande no hover */
+}
+
+@media (max-width: 768px) {
+    .tabs2 button {
+    /*margin-bottom: 20px;*/
+    color: #dc625c;
+    font-size: 10px;
+    padding: 0px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+    }
+
+.tabs2 button:hover {
+    /*margin-top: 1px;*/
+    color: #af4e4e; /* Cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Ampliação suave ao passar o mouse */
+}
+
+.tabs2 button::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distância do texto */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #af4e4e;
+    transition: width 0.3s ease;
+}
+
+.tabs2 button:hover::after {
+    width: 100%; /* Animação para preencher a largura */
+}
+
+.tabs2 button.active {
+    padding: 4px;
+    color: #fff; /* Cor diferenciada para o botão ativo */
+}
+
+}
+
+.portfolio-wrapper2 {
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto; /* Centralizar o wrapper horizontalmente */
+}
+
+.portfolio2 {
+    display: none; /* Esconder todas as seções inicialmente */
+    /*display: grid;*/
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    justify-items: center;
+    align-items: center; /* Adicionado para centralizar verticalmente */
+    margin: 0 auto; /* Centralizado horizontalmente */
+    opacity: 0;
+    position: relative;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(50px); /* Adicionado para iniciar levemente fora da tela */
+}
+
+.portfolio2.show {
+        display: grid; /* Mostrar a seção ativa */
+    opacity: 1;
+    transform: translateY(0); /* Suave movimento para dentro da tela */
+}
+
+@media (max-width: 768px) {
+    .portfolio2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        max-width: 100%; /* Ajustado para ocupar a largura total no mobile */
+        justify-items: center;
+        align-items: center; /* Adicionado para centralizar verticalmente no mobile */
+        margin: 0 auto; /* Centralizado horizontalmente no mobile */
+        opacity: 0;
+        position: relative;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(50px); /* Inicia levemente fora da tela */
+    }
+
+    .popup-content2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .popup-image2 {
+        position: relative;
+        width: 100%;
+        /*max-height: 800px;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .popup-media2 {
+        position: relative;
+        width: 100%;
+        /*max-height: 800px;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup-text2 {
+       /* font-size: 10px;
+        text-align: center;
+        margin-top: 20px;*/
+
+
+        text-align: left;
+        margin-top: 20px;
+        max-height: 200px; /* Limita a altura do texto no mobile */
+        overflow-y: auto; /* Adiciona o scroll vertical quando necessário */
+    }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .portfolio2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        max-width: 100%; /* Ajustado para ocupar a largura total no mobile */
+        justify-items: center;
+        align-items: center; /* Adicionado para centralizar verticalmente no mobile */
+        margin: 0 auto; /* Centralizado horizontalmente no mobile */
+        opacity: 0;
+        position: relative;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(50px); /* Inicia levemente fora da tela */
+    }
+}
+
+.thumb2 {
+    width: 400px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra leve adicionada */
+}
+
+@media (max-width: 768px) {
+    .thumb2 {
+        width: 170px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.3s;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}
+
+.thumb2:hover {
+    transform: scale(1.05);
+       box-shadow: 0 6px 30px rgba(0, 0, 0, 1.8); /* Sombra leve adicionada */
+}
+
+.thumb2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dc625c;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.thumb2:hover::after {
+    opacity: 0.8; /* Fundo colorido com 70% de opacidade */
+}
+
+.thumb2:hover .thumb-title2 {
+    opacity: 50; /* Esconde o título ao passar o mouse */
+}
+
+.thumb2:hover::before {
+    content: url('assets/lupa.png');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+
+.thumb2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.thumb-title2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    background-color: #dc625c;
+   /* background-color: rgba(0, 0, 0, 0.9);*/
+    padding: 6px;
+    font-size: 14px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .thumb-title2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    background-color: #dc625c;
+   /* background-color: rgba(0, 0, 0, 0.9);*/
+    padding: 2px;
+    font-size: 12px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+
+.thumb2:hover .thumb-title2 {
+    display: block;
+}
+
+.popup2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1000;
+}
+
+#popup2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1000;
+}
+
+.popup2.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#popup2.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content2 {
+    margin: 0 auto; /* Centraliza uniformemente */
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    gap: 20px;
+    max-width: 90%; /* Uniformizar tamanho do popup */
+    max-height: 90%; /* Ajuste menor para garantir uniformidade */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.popup-image2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.popup-media2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.popup-image2 img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.popup-media2 img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+
+.navigation2 {
+    margin-left: 18%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    width: 10%;
+    justify-content: space-between;
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .navigation2 {
+    margin-top: 18px;
+    margin-left: 0%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    width: 30%;
+    justify-content: space-between;
+    pointer-events: auto;
+  }
+}
+
+
+
+
+
+
+/* Show navigation arrows only for projects with multiple images */
+.project-with-multiple-images2 .navigation {
+    display: flex;
+}
+
+
+
+.prev2 {
+    cursor: pointer;
+    font-size: 36px;
+    color: #ffffff; /* Cor branca para as setas */
+    background-color: #d9534f; /* Elipse vermelha */
+    border-radius: 20%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.next2 {
+    cursor: pointer;
+    font-size: 36px;
+    color: #ffffff; /* Cor branca para as setas */
+    background-color: #d9534f; /* Elipse vermelha */
+    border-radius: 20%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.prev2:hover {
+    background-color: #af4e4e; /* Cor vermelha mais escura ao passar o mouse */
+    transform: scale(1.1); /* Aumentar um pouco ao passar o mouse */
+}
+
+.next2:hover {
+    background-color: #af4e4e; /* Cor vermelha mais escura ao passar o mouse */
+    transform: scale(1.1); /* Aumentar um pouco ao passar o mouse */
+}
+
+@media (max-width: 768px) {
+  .next2 {
+    /*margin-left: 20px;*/
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffff; /* Cor branca para as setas */
+    background-color: #d9534f; /* Elipse vermelha */
+    border-radius: 20%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .prev2 {
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffff; /* Cor branca para as setas */
+    background-color: #d9534f; /* Elipse vermelha */
+    border-radius: 20%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+}
+
+.expanded-popup2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+}
+
+.expanded-popup2.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.expanded-popup2 img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.expanded-close2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Estilo para o popup expandido */
+#expandedPopup2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+}
+
+/* Mostrar o popup expandido quando ativo */
+#expandedPopup2.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilo da imagem expandida */
+#expandedImg2 {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Botão para fechar o popup expandido */
+.expanded-close2 {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.popup-text2 {
+    margin-top: 30px;
+    padding-left: 10px;
+    padding-right: 100px;
+    flex: 1;
+    color: #333;
+}
+
+.popup-media2 img, .popup-media2 video {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    object-fit: contain;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .popup-text2 {
+    margin-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex: 1;
+    color: #333;
+  }
+}
+
+.close2 {
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #d9534f; /* Vermelho */
+    color: #ffffff; /* Branco */
+    border: none;
+    border-radius: 50%; /* Torna o botão em formato de elipse */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px; /* Centraliza o texto verticalmente */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close2:hover {
+    background-color: #af4e4e; /* Vermelho mais escuro no hover */
+    transform: scale(1.1); /* Aumenta ligeiramente no hover */
+}
+
+.progress-indicator2 {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #00000080;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .progress-indicator2{
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #00000080;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+}

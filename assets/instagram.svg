@@ -1,21 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Camada_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100">
-  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->
+<svg id="Camada_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+  <!-- Generator: Adobe Illustrator 29.5.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 137)  -->
   <defs>
     <style>
       .st0 {
-        fill: #fff;
+        fill: url(#Gradiente_sem_nome_701);
+      }
+
+      .st0, .st1, .st2 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .st3 {
+        fill: url(#Gradiente_sem_nome_421);
+      }
+
+      .st4 {
+        fill: url(#Gradiente_sem_nome_42);
+      }
+
+      .st5 {
+        fill: url(#Gradiente_sem_nome_60);
       }
 
       .st1 {
-        fill: #dc625c;
+        fill: url(#Gradiente_sem_nome_70);
+      }
+
+      .st2 {
+        fill: none;
+        stroke-width: .25px;
       }
     </style>
+    <radialGradient id="Gradiente_sem_nome_42" data-name="Gradiente sem nome 42" cx="12.06" cy="3.83" fx="12.06" fy="3.83" r="86.73" gradientTransform="translate(7.06 -8.81) rotate(40.98) scale(1 1.64)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".48" stop-color="#f5f5f5" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f5f5f5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="Gradiente_sem_nome_421" data-name="Gradiente sem nome 42" cx="102.06" cy="99.05" fx="102.06" fy="99.05" r="112.93" gradientTransform="translate(168.56 -105.2) rotate(46.4) scale(1 1.91)" xlink:href="#Gradiente_sem_nome_42"/>
+    <radialGradient id="Gradiente_sem_nome_60" data-name="Gradiente sem nome 60" cx="50.15" cy="49.74" fx="50.15" fy="49.74" r="58.96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".3"/>
+      <stop offset=".66" stop-color="#f5f5f5" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f5f5f5"/>
+    </radialGradient>
+    <radialGradient id="Gradiente_sem_nome_70" data-name="Gradiente sem nome 70" cx="18.22" cy="81.36" fx="18.22" fy="81.36" r="97.7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f5f5f5" stop-opacity=".5"/>
+      <stop offset=".85" stop-color="#fff"/>
+    </radialGradient>
+    <radialGradient id="Gradiente_sem_nome_701" data-name="Gradiente sem nome 70" cx="18.2" fx="18.2" r="97.74" xlink:href="#Gradiente_sem_nome_70"/>
   </defs>
-  <circle class="st1" cx="50" cy="50" r="48.6"/>
+  <circle class="st4" cx="50" cy="50" r="48.6"/>
+  <circle class="st3" cx="50" cy="50" r="48.6"/>
+  <circle class="st5" cx="50" cy="50" r="48.6"/>
+  <circle class="st2" cx="50" cy="50" r="48.6"/>
   <g>
-    <path class="st0" d="M63,19.3h-26c-9.8,0-17.7,7.9-17.7,17.7v26c0,9.8,7.9,17.7,17.7,17.7h26c9.8,0,17.7-7.9,17.7-17.7v-26c0-9.8-7.9-17.7-17.7-17.7ZM75.1,63.4c0,6.5-5.3,11.8-11.8,11.8h-26.6c-6.5,0-11.8-5.3-11.8-11.8v-26.6c0-6.5,5.3-11.8,11.8-11.8h26.6c6.5,0,11.8,5.3,11.8,11.8v26.6Z"/>
+    <path class="st1" d="M63,19.3h-26c-9.8,0-17.7,7.9-17.7,17.7v26c0,9.8,7.9,17.7,17.7,17.7h26c9.8,0,17.7-7.9,17.7-17.7v-26c0-9.8-7.9-17.7-17.7-17.7ZM75.1,63.4c0,6.5-5.3,11.8-11.8,11.8h-26.6c-6.5,0-11.8-5.3-11.8-11.8v-26.6c0-6.5,5.3-11.8,11.8-11.8h26.6c6.5,0,11.8,5.3,11.8,11.8v26.6Z"/>
     <path class="st0" d="M50,34.2c-8.8,0-15.9,7.1-15.9,15.9s7.1,15.9,15.9,15.9,15.9-7.1,15.9-15.9-7.1-15.9-15.9-15.9ZM50,60.5c-5.7,0-10.3-4.6-10.3-10.3s4.6-10.3,10.3-10.3,10.3,4.6,10.3,10.3-4.6,10.3-10.3,10.3Z"/>
-    <circle class="st0" cx="66.5" cy="33.6" r="3.7"/>
+    <circle class="st1" cx="66.5" cy="33.6" r="3.7"/>
   </g>
 </svg>

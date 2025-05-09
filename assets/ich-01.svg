@@ -1,12 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Camada_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
-  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->
+<svg id="Camada_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024">
+  <!-- Generator: Adobe Illustrator 29.5.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 141)  -->
   <defs>
     <style>
       .st0 {
-        fill: #fff;
+        fill: url(#Gradiente_sem_nome_701);
+      }
+
+      .st0, .st1, .st2, .st3, .st4 {
+        fill-rule: evenodd;
+      }
+
+      .st0, .st1, .st2, .st3, .st4, .st5 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .st6 {
+        fill: url(#Gradiente_sem_nome_421);
+      }
+
+      .st1 {
+        fill: url(#Gradiente_sem_nome_70);
+      }
+
+      .st7 {
+        fill: url(#Gradiente_sem_nome_42);
+      }
+
+      .st2 {
+        fill: url(#Gradiente_sem_nome_704);
+      }
+
+      .st3 {
+        fill: url(#Gradiente_sem_nome_703);
+      }
+
+      .st4 {
+        fill: url(#Gradiente_sem_nome_702);
+      }
+
+      .st8 {
+        fill: url(#Gradiente_sem_nome_60);
+      }
+
+      .st5 {
+        fill: none;
+        stroke-width: .25px;
       }
     </style>
+    <radialGradient id="Gradiente_sem_nome_42" data-name="Gradiente sem nome 42" cx="113.54" cy="26.95" fx="113.54" fy="26.95" r="912.42" gradientTransform="translate(56.72 -80.79) rotate(40.98) scale(1 1.64)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".48" stop-color="#f5f5f5" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f5f5f5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="Gradiente_sem_nome_421" data-name="Gradiente sem nome 42" cx="1060.39" cy="1028.69" fx="1060.39" fy="1028.69" r="1188.04" gradientTransform="translate(1750.84 -1092.91) rotate(46.4) scale(1 1.91)" xlink:href="#Gradiente_sem_nome_42"/>
+    <radialGradient id="Gradiente_sem_nome_60" data-name="Gradiente sem nome 60" cx="514.24" cy="509.98" fx="514.24" fy="509.98" r="620.31" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".3"/>
+      <stop offset=".66" stop-color="#f5f5f5" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f5f5f5"/>
+    </radialGradient>
+    <radialGradient id="Gradiente_sem_nome_70" data-name="Gradiente sem nome 70" cx="215.38" cy="851.65" fx="215.38" fy="851.65" r="862.87" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f5f5f5" stop-opacity=".5"/>
+      <stop offset=".85" stop-color="#fff"/>
+    </radialGradient>
+    <radialGradient id="Gradiente_sem_nome_701" data-name="Gradiente sem nome 70" cx="215.38" cy="851.65" fx="215.38" fy="851.65" r="862.87" xlink:href="#Gradiente_sem_nome_70"/>
+    <radialGradient id="Gradiente_sem_nome_702" data-name="Gradiente sem nome 70" cx="215.38" cy="851.65" fx="215.38" fy="851.65" r="862.87" xlink:href="#Gradiente_sem_nome_70"/>
+    <radialGradient id="Gradiente_sem_nome_703" data-name="Gradiente sem nome 70" cx="215.38" cy="851.65" fx="215.38" fy="851.65" r="862.87" xlink:href="#Gradiente_sem_nome_70"/>
+    <radialGradient id="Gradiente_sem_nome_704" data-name="Gradiente sem nome 70" cx="215.38" cy="851.65" fx="215.38" fy="851.65" r="862.87" xlink:href="#Gradiente_sem_nome_70"/>
   </defs>
-  <path class="st0" d="M1007.9,74.6c-2.4-9.9-10.1-17.7-20-20.1-25.5-6.7-67.3,17.7-114.9,66.9l-1.5,1.5c-19.5,20.2-41.8,43.2-64.8,66.5H98c-39.9,0-72.2,32.3-72.2,72.2v460.2c0,39.9,32.3,72.2,72.2,72.2h230.7c.5,16.4-5.1,32.4-15.6,45h-36.6c-11.4,0-20.7,9.3-20.7,20.7v29.7c0,27.8,22.6,50.3,50.4,50.4h276.9c27.8,0,50.3-22.6,50.4-50.4v-29.7c0-11.4-9.3-20.7-20.7-20.7h-38.7c-10.5-12.6-16-28.6-15.5-45h230.7c39.9,0,72.2-32.4,72.2-72.2v-450.2c26.3-26.3,52.5-51.6,73.9-72.3,52.5-50.7,79.6-97.4,72.4-124.8h0ZM98,217.3h681c-51.7,51.2-103.4,98.5-133.3,113.4-41.4,20.7-76.6,40.4-86.3,68.5h0c-8.7,2.2-16.9,6-24.2,11.2-18.5,13.1-23.1,34.1-27.5,54.4-6,27.4-10.7,49.1-45.2,55.8h0c-4.7.9-8.6,4.1-10.3,8.6-1.7,4.4-1.1,9.5,1.7,13.3,21.2,27.2,54.2,42.5,88.6,41.1,6.8,0,13.5-.5,20.2-1.4,46.5-6.5,85.5-34.5,99.2-71.3.6-1.7,1.1-3.3,1.7-4.9,29.3-8.6,49.5-44.6,70.7-87,13.7-27.4,54.6-73.1,99.6-119.3v376.8s-780,0-780,0v-415c0-24.5,19.8-44.4,44.3-44.4h0ZM564.3,426.7l72.1,72.2c-.3.8-.5,1.7-.8,2.5-10.2,27.4-40.4,48.4-76.9,53.5h0c-23.6,4.2-47.9-.9-67.8-14.2,32.1-15.6,38.8-46.3,44-69.7,3.6-16.5,6.8-30.8,16.4-37.6h0c4-2.9,8.4-5.1,13.1-6.6h0ZM656.2,479.1l-70.6-70.6c4-8.7,10.3-16.1,18.3-21.4,21.7,27.3,45.9,52.5,72.3,75.3-5,7.3-12,13-20.1,16.6h0ZM691.8,439.2c-23.4-20.5-45-43-64.4-67.3,8.3-4.8,17.6-9.7,27.8-14.8,18.9,15.8,36.7,32.8,53.3,51-5.8,11.5-11.3,21.9-16.6,31h0ZM605.6,889.5c0,6-2.4,11.7-6.6,15.9-4.2,4.2-10,6.6-15.9,6.6h-276.9c-12.4,0-22.5-10.1-22.5-22.5v-22.5h321.9v22.5ZM541.1,839.1h-194.9c7.2-13.9,10.7-29.4,10.4-45h174.2c-.4,15.6,3.2,31.1,10.4,45h0ZM789.3,766.2H98c-24.5,0-44.3-19.9-44.3-44.4v-17.3h780v17.3c0,24.5-19.8,44.3-44.4,44.3h0ZM916.1,179.4c-78.3,75.6-156.5,152.8-192.7,204.1h0c-13.6-14.6-28-28.4-43.1-41.4,56.6-39.6,144.7-130.8,211.2-199.7l1.5-1.5c50.7-52.5,81.6-61.8,87.8-59.3,3,6.7-7,42.1-64.8,98h0ZM191.1,497.3l-11.7,92h0c-.8,6,1.1,12.1,5.1,16.7,4,4.6,9.8,7.2,15.9,7.3,2.8,0,5.7-.6,8.3-1.7l88.4-37.5,84.4,37.1h0c7,3,15.1,2.1,21.3-2.5,6.1-4.6,9.3-12.1,8.3-19.7l-11.7-91.7,55-67.2c4.6-5.7,6-13.3,3.7-20.2-2.3-6.9-8-12.2-15.1-13.9l-85.1-20.7-44.2-78.8c-3.8-6.7-10.9-10.8-18.5-10.8s-14.7,4.2-18.5,10.8l-44.2,78.8-85.1,20.7h0c-7.1,1.7-12.8,7-15.1,13.9-2.3,6.9-.9,14.6,3.7,20.2l55,67.2ZM241.9,401.7c5.7-1.3,10.6-5.1,13.5-10.2l39.9-71,39.9,71c2.8,5.2,7.7,8.9,13.5,10.2l77.6,18.9-50.2,61.2h0c-3.7,4.5-5.4,10.4-4.6,16.2l10.6,83-76.3-33.6h0c-5.3-2.4-11.5-2.4-16.8-.1l-80.4,34.1,10.6-83.3h0c.8-5.8-.9-11.6-4.6-16.1l-50.2-61.3,77.7-18.9Z"/>
+  <circle class="st7" cx="512.7" cy="512.7" r="511.3"/>
+  <circle class="st6" cx="512.7" cy="512.7" r="511.3"/>
+  <circle class="st8" cx="512.7" cy="512.7" r="511.3"/>
+  <circle class="st5" cx="512.7" cy="512.7" r="511.3"/>
+  <g>
+    <path class="st1" d="M611.21,783.49l14.07,56.29h-225.16l14.07-56.29h197.01Z"/>
+    <path class="st0" d="M627.46,276.88H203.13c-15.55,0-28.16,12.8-28.16,28.14v422.17c0,15.54,12.59,28.14,28.16,28.14h619.14c15.55,0,28.16-12.8,28.16-28.14v-422.17c0-9.46-4.66-17.83-11.83-22.93l-25.8,22.93h9.48v394.02H203.11v-394.02h399.33l25.02-28.14Z"/>
+    <path class="st4" d="M653.42,825.7c0-7.77-6.41-14.07-14.34-14.07h-252.76c-7.92,0-14.34,6.53-14.34,14.07s6.41,14.07,14.34,14.07h252.76c7.92,0,14.34-6.53,14.34-14.07Z"/>
+    <g>
+      <path class="st3" d="M345.27,606.72c49.98,40.09,126.4,7.68,148.38-14.3,21.98-21.98,21.98-57.62,0-79.61-21.98-21.98-57.62-21.98-79.61,0-21.98,21.98-23.83,76.77-68.78,93.91Z"/>
+      <path class="st2" d="M528.65,519.96l295-262.23c23.39-20.79,24.33-55.28,2.34-77.27-22.14-22.14-56.58-20.93-77.27,2.34l-262.23,295,42.14,42.14Z"/>
+    </g>
+  </g>
 </svg>

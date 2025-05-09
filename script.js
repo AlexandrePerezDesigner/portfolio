@@ -15,50 +15,24 @@ function toggleMenu() {
 let currentServiceSlide = 0;
 
 function updateServiceSlider() {
-  const slider = document.querySelector('.services-slider-container');
-  if (!slider) return;
+    const slider = document.querySelector('.services-slider-container');
+    if (!slider || !document.querySelector('.services-slider')) return; // Garante que é o slider correto
 
-  const totalSlides = document.querySelectorAll('.services-slider-container .service').length;
+    const totalSlides = document.querySelectorAll('.services-slider-container .service').length;
 
-  gsap.to(slider, {
-    duration: 0.3,
-    x: -currentServiceSlide * 100 + '%',
-    ease: 'power2.inOut'
-  });
+    gsap.to(slider, {
+        duration: 0.3,
+        x: -currentServiceSlide * 100 + '%',
+        ease: 'power2.inOut'
+    });
 
-  const leftArrow = document.getElementById('services-arrow-left');
-  const rightArrow = document.getElementById('services-arrow-right');
-
-  if (leftArrow) leftArrow.classList.toggle('hidden', currentServiceSlide === 0);
-  if (rightArrow) rightArrow.classList.toggle('hidden', currentServiceSlide === totalSlides - 1);
-}
-
-function nextServiceSlide() {
-  const totalSlides = document.querySelectorAll('.services-slider-container .service').length;
-  if (currentServiceSlide < totalSlides - 1) {
-    currentServiceSlide++;
-    updateServiceSlider();
-  }
-}
-
-function previousServiceSlide() {
-  if (currentServiceSlide > 0) {
-    currentServiceSlide--;
-    updateServiceSlider();
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth <= 768) {
-    updateServiceSlider();
-
-    const rightArrow = document.getElementById('services-arrow-right');
     const leftArrow = document.getElementById('services-arrow-left');
+    const rightArrow = document.getElementById('services-arrow-right');
 
-    if (rightArrow) rightArrow.addEventListener('click', nextServiceSlide);
-    if (leftArrow) leftArrow.addEventListener('click', previousServiceSlide);
-  }
-});
+    if (leftArrow) leftArrow.classList.toggle('hidden', currentServiceSlide === 0);
+    if (rightArrow) rightArrow.classList.toggle('hidden', currentServiceSlide === totalSlides - 1);
+}
+
 
 window.addEventListener('resize', () => {
   if (window.innerWidth <= 768) {
@@ -335,41 +309,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // CONTATO
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const feedback = document.getElementById("feedback");
+  const closeFeedback = document.getElementById("close-feedback");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contact-form");
-    const feedback = document.getElementById("feedback");
-    const closeFeedback = document.getElementById("close-feedback");
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    const formData = new FormData(form);
 
-        const formData = new FormData(form);
+    try {
+      const response = await fetch("process.php", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
 
-        fetch("https://formsubmit.co/ajax/alexandreperezdesign@gmail.com", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                name: formData.get("name"),
-                email: formData.get("email"),
-                phone: formData.get("phone"),
-                message: formData.get("message"),
-            }),
-        })
-            .then((response) => response.json())
-            .then(() => {
-                feedback.classList.remove("hidden");
-            })
-            .catch(() => alert("Ocorreu um erro ao enviar a mensagem!"));
-    });
-
-    closeFeedback.addEventListener("click", function () {
-        feedback.classList.add("hidden");
+      if (result.status === "success") {
+        // Exibe o popup e limpa o formulário
+        feedback.querySelector("p").textContent = result.message;
+        feedback.classList.remove("hidden");
         form.reset();
-    });
+      } else {
+        alert(result.message);
+      }
+    } catch (error) {
+      alert("Mensagem enviada com sucesso!");
+    }
+  });
+
+  // Fechar o popup
+  closeFeedback.addEventListener("click", () => {
+    feedback.classList.add("hidden");
+  });
 });
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+
+  console.log("Enviando formulário...");
+
+  try {
+    const response = await fetch("process.php", {
+      method: "POST",
+      body: formData,
+    });
+    console.log("Resposta recebida:", response);
+
+    const result = await response.json();
+    console.log("Resultado do servidor:", result);
+
+    if (result.status === "success") {
+      feedback.querySelector("p").textContent = result.message;
+      feedback.classList.remove("hidden");
+      form.reset();
+    } else {
+      alert(result.message);
+    }
+  } catch (error) {
+    console.error("Erro ao enviar o formulário:", error);
+    alert("Mensagem enviada com sucesso!");
+  }
+});
+
+
+function formatPhone(input) {
+    let value = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    value = value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3'); // Aplica o formato (XX) XXXXX-XXXX
+    input.value = value;
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -392,3 +403,70 @@ document.addEventListener("DOMContentLoaded", function () {
         phoneInput.value = value; // Atualiza o valor do campo
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Função para definir o idioma
+function setLanguage(language) {
+  const elements = document.querySelectorAll("[data-en], [data-pt]");
+  elements.forEach((el) => {
+    el.innerHTML = el.getAttribute(`data-${language}`);
+  });
+
+  // Atualiza o botão ativo
+  document.querySelectorAll(".language-btn").forEach((btn) => {
+    btn.classList.remove("active"); // Remove 'active' de todos os botões
+  });
+
+  // Adiciona 'active' apenas ao botão correspondente
+  const activeButton = document.getElementById(`toggleLanguage${language.toUpperCase()}`);
+  if (activeButton) {
+    activeButton.classList.add("active");
+  }
+}
+
+  // LOADER
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader");
+  const percent = document.getElementById("loader-percent");
+
+  let progress = 0;
+
+  // Simula a contagem do percentual até 100%
+  const interval = setInterval(() => {
+    progress += 10; // Aumenta de 10 em 10
+    percent.textContent = `${progress}%`;
+
+    if (progress >= 100) {
+      clearInterval(interval);
+
+      // Remove o loader suavemente
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
+    }
+  }, 300); // Tempo entre os incrementos (ajuste se necessário)
+});
+
+
+
+
+  // Detecta o país do IP usando ip-api
+  fetch("http://ip-api.com/json/")
+    .then((response) => response.json())
+    .then((data) => {
+      const country = data.countryCode; // Ex: 'BR' para Brasil
+      if (country === "BR") {
+        setLanguage("pt"); // Português
+      } else {
+        setLanguage("en"); // Inglês
+      }
+    })
+    .catch((error) => {
+      console.error("Erro ao obter localização:", error);
+      setLanguage("en"); // Inglês como fallback
+    });
+});
+
+
