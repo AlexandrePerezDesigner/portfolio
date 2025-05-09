@@ -984,8 +984,8 @@ footer .language-switcher {
 
 
 .service {
-  min-width: 300px;
-  margin-left: 44px;
+  min-width: 0px;
+  margin-left: 0px;
   flex: 0 0 100%; /* Cada slide ocupa 100% da largura */
   text-align: center;
   padding: 1.5rem; /* Adiciona espaçamento interno para evitar cortes */
@@ -1039,10 +1039,10 @@ footer .language-switcher {
   border-radius: 10px;
   /*background-color: #fff;*/
   padding: 1rem;
-  margin-top: 2rem;
+  /*margin-top: 2rem;*/
   display: flex; /* Flex container */
   align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
+  /*justify-content: center; /* Centraliza horizontalmente */
   margin-bottom: 100px; /* Adiciona espaço extra abaixo do slider */
 }
 
@@ -1086,7 +1086,7 @@ footer .language-switcher {
 /* Contêiner flexível para o slider */
 .services-slider-container {
         gap: 36px;
-        margin-left: -20px;
+        margin-left: 60px;
         display: flex;
         transition: transform 0.3s ease-in-out;
         touch-action: pan-y;
@@ -1103,6 +1103,7 @@ footer .language-switcher {
 
 /* Cada slide ocupa toda a largura e é centralizado */
 .service {
+  margin-right: 10px;
   width: 60px;
   flex: 0 0 100%; /* Cada slide ocupa 100% da largura */
   text-align: center;
@@ -1177,7 +1178,7 @@ footer .language-switcher {
   .services-slider {
     margin-bottom: 8rem; /* Aumenta o espaço abaixo do slider */
     display: flex;
-    height: 340px;
+    height: 450px;
   }
 }
 

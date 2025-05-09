@@ -470,3 +470,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.services-slider-container');
+  if (!slider) return;
+
+  let startX = 0;
+  let startY = 0;
+
+  slider.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  });
+
+  slider.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const endY = e.changedTouches[0].clientY;
+
+    const deltaX = endX - startX;
+    const deltaY = endY - startY;
+
+    const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50;
+
+    if (!isHorizontalSwipe) return;
+
+    if (deltaX < 0) {
+      nextSlide();
+    } else {
+      previousSlide();
+    }
+  });
+});
