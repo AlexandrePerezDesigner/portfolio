@@ -5,12 +5,20 @@ function setLanguage(language) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => setLanguage('en'));
+document.addEventListener("DOMContentLoaded", () => setLanguage('pt'));
 
-function toggleMenu() {
+
+
+function closeMobileMenu() {
+  console.log("closeMobileMenu foi chamado"); // TESTE
   const menu = document.getElementById("mobile-menu");
-  if (menu) menu.classList.toggle("hidden");
+
+  if (window.innerWidth <= 768 && menu.classList.contains("open")) {
+    menu.classList.remove("open");
+    menu.classList.add("hidden");
+  }
 }
+
 
 let currentServiceSlide = 0;
 
@@ -186,10 +194,44 @@ document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger");
   const mobileMenu = document.querySelector("#mobile-menu");
 
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
+
   hamburger.addEventListener("click", function () {
     mobileMenu.classList.toggle("open");
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("open")) {
+        mobileMenu.classList.remove("open");
+        mobileMenu.classList.add("hidden");
+      }
+    });
   });
 });
+
+window.addEventListener("resize", () => {
+  const mobileMenu = document.getElementById("mobile-menu");
+  const hamburger = document.querySelector(".hamburger");
+
+  if (window.innerWidth > 768) {
+    // Oculta o menu mobile e reseta classes
+    mobileMenu.classList.add("hidden");
+    mobileMenu.classList.remove("open");
+
+    // Garante que o botão hamburguer suma se necessário (caso use visibilidade condicional)
+    if (hamburger) {
+      hamburger.classList.remove("scrolled"); // opcional, caso use estilo scroll
+    }
+  }
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const leftArrow = document.querySelector('.arrow-left');
@@ -465,7 +507,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => {
       console.error("Erro ao obter localização:", error);
-      setLanguage("en"); // Inglês como fallback
+      setLanguage("pt"); // fallback para português
     });
 });
 
@@ -501,3 +543,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("open");
+    });
+  });
+});
+

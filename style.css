@@ -30,6 +30,7 @@ body {
   overflow-x: hidden; /* Remover scroll lateral */
 }
 
+
 body.no-scroll {
     overflow: hidden; /* Impede o scroll */
 }
@@ -194,7 +195,6 @@ header nav ul li a.active {
 header.scrolled {
     /*background-color: #dc625c;*/
     /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);*/
-    opacity: 0.9;
     transition: background-color 0.3s ease, opacity 0.3s ease; /* Suaviza transições no estado scrolled */
 }
 
@@ -817,7 +817,7 @@ header nav ul li a:hover::after {
   border: none; /* Remove borda */
   background: none; /* Remove fundo inicial */
   color: #edf3ff; /* Texto na cor inicial */
-  font-size: 0.9rem; /* Tamanho do texto */
+  font-size: 0.7rem; /* Tamanho do texto */
   cursor: pointer; /* Mostra que é clicável */
   position: relative; /* Necessário para o efeito de preenchimento */
   overflow: hidden; /* Garante que o preenchimento fique dentro do botão */
@@ -887,9 +887,9 @@ z-index: 1;
 }
 
 footer p {
-  margin-top: -1.0rem; /* Reduz a margem superior */
-  margin-bottom: 0; /* Remove espaço inferior, se necessário */
-  font-size: 0.9rem; /* Opcional: ajuste o tamanho da fonte, se necessário */
+  margin-top: -1.2rem; /* Reduz a margem superior */
+  margin-bottom: -2px; /* Remove espaço inferior, se necessário */
+  font-size: 0.7rem; /* Opcional: ajuste o tamanho da fonte, se necessário */
   color: #edf3ff; /* Ajuste a cor, se desejar */
   text-align: center; /* Centraliza o texto */
 }
@@ -1225,8 +1225,8 @@ header {
 }
 
 .redes-icons {
-  width: 24px; /* Define a largura do ícone */
-  height: 24px; /* Define a altura do ícone */
+  width: 22px; /* Define a largura do ícone */
+  height: 22px; /* Define a altura do ícone */
   object-fit: contain; /* Garante proporções corretas */
   transition: transform 0.3s ease, filter 0.3s ease; /* Suaviza zoom e brilho */
 }
